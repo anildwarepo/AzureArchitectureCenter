@@ -39,34 +39,6 @@ The agent will interpret your input, map components to Azure services, embed off
 
 ---
 
-## Repository Structure
-
-```
-├── .github/
-│   ├── agents/                          # Copilot agent instructions
-│   │   ├── architecture_creator_agent_instructions.md
-│   │   └── azure_architecture_creator_agent_instructions.md
-│   └── skills/
-│       └── azure-architecture-svg/
-│           └── SKILL.md                 # Icon catalog, color system, layout rules
-├── Architecture_Diagrams/               # Generated SVG output
-├── Azure_Icons/                         # Official Azure service icons (SVG, 18×18)
-│   ├── ai + machine learning/
-│   ├── analytics/
-│   ├── compute/
-│   ├── containers/
-│   ├── databases/
-│   ├── identity/
-│   ├── networking/
-│   ├── security/
-│   ├── storage/
-│   └── ... (28 categories)
-├── Reference_Architecture/              # PPTX reference patterns
-└── README.md
-```
-
----
-
 ## How It Works
 
 ### Azure Icons
@@ -114,6 +86,25 @@ The `Reference_Architecture/` folder contains SVG reference files with proven ar
 | `data_protection_presentation.svg` | Data protection workflows |
 
 The agent consults these when your request matches a known pattern, using them to inform component selection, layout, and data flow.
+
+---
+
+## Example Usage
+
+### Whiteboard to SVG
+
+**1. Input** — a whiteboard photo snapped on a phone:
+
+![Whiteboard](20260415_190530788_iOS.jpg)
+
+**2. Prompt:**
+```
+convert this whiteboard architecture into a nice svg architecture
+```
+
+**3. Output** — a professional SVG with official Azure icons, color-coded zones, and a legend:
+
+![Result](Architecture_Diagrams/private-ai-foundry-agent.svg)
 
 ---
 
