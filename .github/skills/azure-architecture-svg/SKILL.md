@@ -1,6 +1,6 @@
 ---
 name: azure-architecture-svg
-description: 'Create Azure architecture diagrams as SVG files using official Azure service icons from ./Azure_Icons/ and reference architecture patterns from ./Reference_Architecture/ PPTX files. Use when: user asks to create architecture diagram, draw Azure architecture, generate SVG diagram, visualize Azure solution, create reference architecture, diagram cloud infrastructure, architecture for APIM, Fabric OneLake, AI inferencing, data lake.'
+description: 'Create Azure architecture diagrams as SVG files using official Azure service icons from ./Azure_Icons/ and reference architecture patterns from ./Reference_Architecture/. Use when: user asks to create architecture diagram, draw Azure architecture, generate SVG diagram, visualize Azure solution, create reference architecture, diagram cloud infrastructure.'
 ---
 
 # Azure Architecture SVG Diagram Skill
@@ -18,33 +18,26 @@ Create professional, self-contained SVG architecture diagrams using official Azu
 
 ### Step 1 — Match Reference Architecture
 
-Check if the user's request matches any PPTX file in `./Reference_Architecture/`. These contain proven Azure architecture patterns to inform your diagram.
+Check if the user's request matches any reference file in `./Reference_Architecture/`. These contain proven Azure architecture patterns to inform your diagram.
 
 **Available reference architectures:**
 
 | File | Scenario | Key Components |
 |---|---|---|
-| `Cohesity - AI Data Lake on Microsoft Fabric Onelake.pptx` | Data lake on Fabric/OneLake, on-prem NAS ingestion, ACL security model | OneLake, Fabric Gateway, Entra Connect, Lakehouse, Spark Notebooks, Power BI, SQL Endpoint, Purview, Cognitive containers |
-| `Cohesity-APIM-Architecture.pptx` | API Management gateway architectures | API Management, backend services, API gateway patterns |
-| `Inferencing on Azure.pptx` | AI/ML model inferencing pipelines | Azure AI, model endpoints, inferencing infrastructure |
+| `agent_architecture.svg` | AI agent system design | Agent orchestration, tools, knowledge retrieval |
+| `architecture.svg` | General Azure architecture | Core Azure services and connectivity |
+| `data_protection_presentation.svg` | Data protection workflows | Backup, recovery, data security |
+| `data_security_jira_confluence.svg` | Data security integration | Jira, Confluence, security controls |
+| `elicitation_architecture.svg` | Requirements elicitation | Elicitation workflows and data flow |
+| `handoff-architecture.svg` | Agent handoff patterns | Multi-agent handoff, orchestration |
+| `maf_orchestrations.svg` | Microsoft Agent Framework orchestrations | MAF workflows, agent coordination |
+| `maf_superstep_execution_model.svg` | MAF superstep execution | Step-based agent execution model |
+| `mcp_architecture.svg` | Model Context Protocol | MCP server/client architecture |
+| `mcp_auth_tiering_diagram.svg` | MCP authentication tiers | Auth levels, security tiering |
+| `slide3_streaming_architecture.svg` | Streaming data architecture | Real-time data ingestion and processing |
+| `talentiq-architecture.svg` | TalentIQ platform | AI-powered talent platform architecture |
 
-> **Note:** The APIM and Inferencing PPTX files are DRM-protected and may not be readable programmatically. Use their names as guidance for the architecture pattern and select appropriate Azure icons.
-
-#### Cohesity Fabric OneLake Architecture (extracted from PPTX)
-
-This reference architecture covers loading on-premises NAS data into Microsoft Fabric OneLake with security and governance. The architecture has these key flows:
-
-**Data Ingestion Flow (numbered steps):**
-1. AD Domain Controller hosts on-prem users & groups; SMB file shares hold source files; Fabric On-prem Gateway provides secure connectivity
-2. AD Domain Controller syncs on-prem identities to Microsoft Entra via Entra Connect Sync; Entra users/groups used by Fabric and OneLake for auth
-3. Gateway ingests files into Lakehouse; OneLake security applied to ingested files
-4. Custom application reads ACLs from Permissions File and configures OneLake Data Access roles via Fabric REST APIs
-
-**Layout pattern:** Two-zone horizontal (On-Prem Services | Fabric Tenant) with numbered step annotations and arrow connectors.
-
-**Services used:** AD Domain Controller, Entra Connect, SMB File Shares, S3-Compatible Endpoint, Fabric On-prem Gateway, OneLake, OneLake Shortcuts, Lakehouse, OneLake Security, Spark Notebooks, Power BI, SQL Endpoint, Data Access Role containers.
-
-**Data Governance extension:** Includes Purview integration with custom Docker containers for scanning/classifying documents using Microsoft Cognitive Containers, publishing metadata via REST APIs.
+> **Note:** Reference files are SVGs that can be opened and inspected directly. Use them as layout and component guidance when the user's request matches a known pattern.
 
 ### Step 2 — Identify Azure Services and Icons
 

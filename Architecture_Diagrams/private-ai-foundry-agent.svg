@@ -145,7 +145,7 @@
   <rect width="1400" height="920" rx="12" fill="#f8fafc"/>
 
   <!-- Title -->
-  <text x="700" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Private Azure AI Foundry Agent Architecture — Cohesity Network Integration</text>
+  <text x="700" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Private Azure AI Foundry Agent Architecture — Customer Network Integration</text>
 
   <!-- ============================================ -->
   <!-- ON-PREMISES ZONE (Left Side) -->
@@ -155,7 +155,7 @@
     <!-- Header strip -->
     <rect x="40" y="70" width="320" height="28" rx="10" fill="url(#onpremGrad)"/>
     <rect x="40" y="88" width="320" height="10" fill="url(#onpremGrad)"/>
-    <text x="200" y="89" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">ON-PREMISES — COHESITY NETWORK</text>
+    <text x="200" y="89" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">ON-PREMISES — CUSTOMER NETWORK</text>
   </g>
 
   <!-- DNS Server box -->
