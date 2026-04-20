@@ -1,0 +1,451 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <!-- Shadow filters -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadowLg" x="-2%" y="-4%" width="104%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Arrow markers -->
+    <marker id="arrowRight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="3.5" refY="7" orient="auto">
+      <polygon points="0 0, 7 0, 3.5 10" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowBlueRight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+
+    <!-- On-Prem gradient -->
+    <linearGradient id="onpremGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+
+    <!-- Azure / Infrastructure gradient -->
+    <linearGradient id="azureGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <!-- VNet gradient -->
+    <linearGradient id="vnetGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- AI / Agents gradient -->
+    <linearGradient id="aiGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+
+    <!-- Data gradient -->
+    <linearGradient id="dataGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Security gradient -->
+    <linearGradient id="securityGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+
+    <!-- Networking gradient -->
+    <linearGradient id="networkGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- ExpressRoute icon gradients (prefixed er-) -->
+    <linearGradient id="er-g1" x1="5.33" y1="2.81" x2="8.74" y2="6.22" gradientTransform="translate(2.03 -1.37) rotate(-0.08)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+    <linearGradient id="er-g2" x1="11.84" y1="14.54" x2="15.24" y2="17.95" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+    <linearGradient id="er-g3" x1="-1.34" y1="14.53" x2="2.06" y2="17.93" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+
+    <!-- VNet icon gradients (prefixed vn-) -->
+    <linearGradient id="vn-g1" x1="9.88" y1="8.59" x2="11.52" y2="10.23" gradientTransform="translate(2.03 -0.4) rotate(-0.08)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+    <linearGradient id="vn-g2" x1="6.18" y1="8.59" x2="7.81" y2="10.23" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+    <linearGradient id="vn-g3" x1="2.48" y1="8.59" x2="4.11" y2="10.23" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+
+    <!-- Cosmos DB icon gradients (prefixed cos-) -->
+    <radialGradient id="cos-g1" cx="-105.006" cy="-10.409" r="5.954" gradientTransform="translate(117.739 19.644) scale(1.036 1.027)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.183" stop-color="#5ea0ef"/><stop offset="1" stop-color="#0078d4"/>
+    </radialGradient>
+    <clipPath id="cos-clip1">
+      <path d="M14.969,7.53A6.137,6.137,0,1,1,7.574,2.987,6.137,6.137,0,0,1,14.969,7.53Z" fill="none"/>
+    </clipPath>
+
+    <!-- Private Endpoint icon gradients (prefixed pe-) -->
+    <linearGradient id="pe-g1" x1="9.084" y1="790.967" x2="9.084" y2="787.492" gradientTransform="matrix(1, 0, 0, -1, 0, 791.516)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#50e6ff"/><stop offset="1" stop-color="#32bedd"/>
+    </linearGradient>
+    <linearGradient id="pe-g2" x1="9.065" y1="13.843" x2="9.065" y2="10.368" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5e9624"/><stop offset="0.183" stop-color="#629c25"/><stop offset="0.435" stop-color="#6dae2a"/>
+      <stop offset="0.726" stop-color="#7fcb30"/><stop offset="0.822" stop-color="#86d633"/>
+    </linearGradient>
+
+    <!-- AI Studio icon gradients (prefixed ais-) -->
+    <linearGradient id="ais-g1" x1="-603.563" y1="-218.378" x2="-606.6" y2="-206.22" gradientTransform="translate(617.126 -205.758) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#712575"/><stop offset=".09" stop-color="#9a2884"/><stop offset=".18" stop-color="#bf2c92"/>
+      <stop offset=".27" stop-color="#da2e9c"/><stop offset=".34" stop-color="#eb30a2"/><stop offset=".4" stop-color="#f131a5"/>
+      <stop offset=".5" stop-color="#ec30a3"/><stop offset=".61" stop-color="#df2f9e"/><stop offset=".72" stop-color="#c92d96"/>
+      <stop offset=".83" stop-color="#aa2a8a"/><stop offset=".95" stop-color="#83267c"/><stop offset="1" stop-color="#712575"/>
+    </linearGradient>
+    <linearGradient id="ais-g2" x1="-602.412" y1="-206.025" x2="-602.412" y2="-223.175" gradientTransform="translate(617.126 -205.758) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#da7ed0"/><stop offset=".08" stop-color="#b17bd5"/><stop offset=".19" stop-color="#8778db"/>
+      <stop offset=".3" stop-color="#6276e1"/><stop offset=".41" stop-color="#4574e5"/><stop offset=".54" stop-color="#2e72e8"/>
+      <stop offset=".67" stop-color="#1d71eb"/><stop offset=".81" stop-color="#1471ec"/><stop offset="1" stop-color="#1171ed"/>
+    </linearGradient>
+    <linearGradient id="ais-g3" x1="-603.438" y1="-206.414" x2="-614.807" y2="-224.644" gradientTransform="translate(617.126 -205.758) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#da7ed0"/><stop offset=".05" stop-color="#b77bd4"/><stop offset=".11" stop-color="#9079da"/>
+      <stop offset=".18" stop-color="#6e77df"/><stop offset=".25" stop-color="#5175e3"/><stop offset=".33" stop-color="#3973e7"/>
+      <stop offset=".42" stop-color="#2772e9"/><stop offset=".54" stop-color="#1a71eb"/><stop offset=".68" stop-color="#1371ec"/>
+      <stop offset="1" stop-color="#1171ed"/>
+    </linearGradient>
+
+    <!-- Cognitive Search icon gradient (prefixed cs-) -->
+    <linearGradient id="cs-g1" x1="9" y1="0.36" x2="9" y2="18.31" gradientUnits="userSpaceOnUse">
+      <stop offset="0.18" stop-color="#5ea0ef"/><stop offset="1" stop-color="#0078d4"/>
+    </linearGradient>
+
+    <!-- DNS Zone icon gradient (prefixed dns-) -->
+    <radialGradient id="dns-g1" cx="-6811.4" cy="6729.69" r="17" gradientTransform="matrix(0.5, 0, 0, -0.5, 3414.91, 3374.05)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.18" stop-color="#5ea0ef"/><stop offset="1" stop-color="#0078d4"/>
+    </radialGradient>
+
+    <!-- VNet Gateway icon gradient (prefixed vgw-) -->
+    <linearGradient id="vgw-g1" x1="8.59" y1="-7.79" x2="9.12" y2="20.05" gradientUnits="userSpaceOnUse">
+      <stop offset="0.22" stop-color="#32d4f5"/><stop offset="0.47" stop-color="#31d1f3"/><stop offset="0.63" stop-color="#2ec9eb"/>
+      <stop offset="0.77" stop-color="#29bade"/><stop offset="0.89" stop-color="#22a5cb"/><stop offset="1" stop-color="#198ab3"/>
+    </linearGradient>
+
+    <!-- Storage Account icon gradient (prefixed sa-) -->
+    <linearGradient id="sa-g1" x1="9" y1="15.83" x2="9" y2="5.79" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3b3b3"/><stop offset="0.26" stop-color="#c1c1c1"/><stop offset="1" stop-color="#e6e6e6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="920" rx="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="700" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Private Azure AI Foundry Agent Architecture — Cohesity Network Integration</text>
+
+  <!-- ============================================ -->
+  <!-- ON-PREMISES ZONE (Left Side) -->
+  <!-- ============================================ -->
+  <g filter="url(#shadowLg)">
+    <rect x="40" y="70" width="320" height="620" rx="10" fill="#fff" stroke="#94a3b8" stroke-width="1.5" opacity="0.95"/>
+    <!-- Header strip -->
+    <rect x="40" y="70" width="320" height="28" rx="10" fill="url(#onpremGrad)"/>
+    <rect x="40" y="88" width="320" height="10" fill="url(#onpremGrad)"/>
+    <text x="200" y="89" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">ON-PREMISES — COHESITY NETWORK</text>
+  </g>
+
+  <!-- DNS Server box -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="120" width="240" height="90" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <!-- DNS Zone icon -->
+    <g transform="translate(175, 128) scale(2)">
+      <path id="dns-globe" d="M14.21,15.72A8.5,8.5,0,0,1,3.79,2.28l.09-.06a8.5,8.5,0,0,1,10.33,13.5" fill="url(#dns-g1)"/>
+      <path d="M9,1.31A7.69,7.69,0,1,0,16.69,9,7.7,7.7,0,0,0,9,1.31ZM14.15,3.9A7.37,7.37,0,0,1,12,4.7,8.83,8.83,0,0,0,10.75,2,7.2,7.2,0,0,1,14.15,3.9ZM9,1.74a6.59,6.59,0,0,1,1.09.09h0a7.48,7.48,0,0,1,1.53,3,15.12,15.12,0,0,1-5.45,0A7.38,7.38,0,0,1,7.68,1.89l0,0A7.34,7.34,0,0,1,9,1.74ZM7,2A8.72,8.72,0,0,0,5.73,4.68a5.58,5.58,0,0,1-1.9-.77A7.35,7.35,0,0,1,7,2ZM3.72,14a5.27,5.27,0,0,1,1.78-.76,7.08,7.08,0,0,0,1.35,2.72A7.25,7.25,0,0,1,3.72,14Zm6.41,2.2A7.08,7.08,0,0,1,9,16.26a6.83,6.83,0,0,1-1.44-.15l0,0a6,6,0,0,1-1.67-3,14.73,14.73,0,0,1,5.88,0,6,6,0,0,1-1.69,3Zm.73-.16a7.13,7.13,0,0,0,1.38-2.8,6.68,6.68,0,0,1,2,.83A7.13,7.13,0,0,1,10.86,16Zm1.48-3.22c.08-.36.15-.73.2-1.12l-.46.11c-.05.31-.1.62-.17.91a15.23,15.23,0,0,0-6.09,0c-.07-.27-.12-.56-.17-.86a.28.28,0,0,1,0-.09l-.46-.13a2.36,2.36,0,0,0,0,.28c0,.32.11.62.17.91a5.9,5.9,0,0,0-2,.85,7.24,7.24,0,0,1,.11-9.4,6.29,6.29,0,0,0,2.08.86c-.07.24-.13.5-.18.76s0,.25-.08.37l.47-.11,0-.17c.06-.26.12-.51.19-.75A14.89,14.89,0,0,0,9,5.48a15,15,0,0,0,2.78-.26c.07.27.14.56.2.85l.46.11q-.11-.54-.24-1a7.73,7.73,0,0,0,2.3-.91,7.22,7.22,0,0,1,.06,9.49A7.28,7.28,0,0,0,12.34,12.79Z" fill="#5ea0ef"/>
+      <path d="M3.69,7a7.92,7.92,0,0,1,1.16-.08,2.44,2.44,0,0,1,1.71.52A2,2,0,0,1,7.15,8.9a2.21,2.21,0,0,1-.61,1.64,2.6,2.6,0,0,1-1.86.61,9.17,9.17,0,0,1-1-.05Zm.55,3.73a4,4,0,0,0,.55,0A1.62,1.62,0,0,0,6.58,8.92,1.5,1.5,0,0,0,4.87,7.3a3.17,3.17,0,0,0-.63,0Z" fill="#fff"/>
+      <path d="M7.86,11.11V6.9h.59L9.8,9a12.18,12.18,0,0,1,.76,1.37h0c-.05-.56-.06-1.07-.06-1.73V6.9H11v4.21h-.55L9.13,9c-.29-.47-.57-1-.79-1.4h0c0,.53,0,1,0,1.74v1.8Z" fill="#fff"/>
+      <path d="M11.89,10.45a2,2,0,0,0,1,.27c.56,0,.88-.29.88-.72s-.22-.62-.79-.83-1.12-.6-1.12-1.2a1.22,1.22,0,0,1,1.37-1.14,2,2,0,0,1,.93.2L14,7.48a1.63,1.63,0,0,0-.8-.2c-.58,0-.8.34-.8.63s.26.59.84.81,1.08.62,1.08,1.24-.48,1.21-1.48,1.21a2.16,2.16,0,0,1-1.07-.27Z" fill="#fff"/>
+    </g>
+    <text x="200" y="178" text-anchor="middle" fill="#334155" font-size="12" font-weight="600">DNS Server</text>
+    <text x="200" y="193" text-anchor="middle" fill="#64748b" font-size="10">Private DNS Resolution</text>
+  </g>
+
+  <!-- Users box -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="240" width="240" height="80" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <text x="122" y="278" font-size="28">👤</text>
+    <text x="200" y="275" text-anchor="middle" fill="#334155" font-size="12" font-weight="600">On-Premises Users</text>
+    <text x="200" y="292" text-anchor="middle" fill="#64748b" font-size="10">Corporate Network Access</text>
+  </g>
+
+  <!-- VPN S2S box -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="350" width="240" height="90" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <!-- VNet Gateway icon (for VPN) -->
+    <g transform="translate(175, 358) scale(2)">
+      <path d="M15.06,8.67h-1V5.59a5.81,5.81,0,0,0-1.49-3.92A4.79,4.79,0,0,0,8.91,0a4.79,4.79,0,0,0-3.7,1.67A5.73,5.73,0,0,0,3.72,5.59V8.67H2.91a.7.7,0,0,0-.69.69v8a.7.7,0,0,0,.69.69H15.06a.71.71,0,0,0,.7-.69V9.36A.71.71,0,0,0,15.06,8.67Zm-3.37,0H6.13V5.54A3.18,3.18,0,0,1,7,3.39a2.51,2.51,0,0,1,1.88-.86,2.54,2.54,0,0,1,1.89.86,3.19,3.19,0,0,1,.32.43h0a3,3,0,0,1,.61,1.71Z" fill="url(#vgw-g1)"/>
+      <path d="M15.09,8.67H2.92a.66.66,0,0,0-.44.17l13.05,9a.67.67,0,0,0,.25-.52v-8A.71.71,0,0,0,15.09,8.67Z" fill="#50e6ff"/>
+      <path d="M2.94,8.67H15.1a.7.7,0,0,1,.45.17l-13.06,9a.7.7,0,0,1-.25-.52v-8A.72.72,0,0,1,2.94,8.67Z" fill="#fff" opacity="0.2"/>
+    </g>
+    <text x="200" y="408" text-anchor="middle" fill="#065f46" font-size="12" font-weight="600">VPN Site-to-Site</text>
+    <text x="200" y="423" text-anchor="middle" fill="#047857" font-size="10">Encrypted Tunnel</text>
+  </g>
+
+  <!-- ExpressRoute box -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="470" width="240" height="90" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <!-- ExpressRoute icon -->
+    <g transform="translate(175, 478) scale(2)">
+      <rect x="4.74" y="4.21" width="1.98" height="9.5" transform="translate(5.25 -1.66) rotate(30)" fill="#a67af4"/>
+      <rect x="11.21" y="4.37" width="1.98" height="9.5" transform="translate(-2.92 7.32) rotate(-30)" fill="#a67af4"/>
+      <rect x="7.9" y="9.97" width="1.98" height="9.5" transform="translate(23.61 5.82) rotate(90)" fill="#773adc"/>
+      <circle cx="9.07" cy="3.14" r="2.41" fill="url(#er-g1)"/>
+      <circle cx="15.59" cy="14.86" r="2.41" fill="url(#er-g2)"/>
+      <circle cx="2.41" cy="14.86" r="2.41" fill="url(#er-g3)"/>
+    </g>
+    <text x="200" y="528" text-anchor="middle" fill="#065f46" font-size="12" font-weight="600">ExpressRoute</text>
+    <text x="200" y="543" text-anchor="middle" fill="#047857" font-size="10">Private Connectivity</text>
+  </g>
+
+  <!-- "No Public Internet" label -->
+  <g>
+    <rect x="100" y="600" width="200" height="50" rx="8" fill="#fef2f2" stroke="#f87171" stroke-width="1.5"/>
+    <text x="200" y="623" text-anchor="middle" fill="#991b1b" font-size="12" font-weight="700">✕ No Public Internet</text>
+    <text x="200" y="638" text-anchor="middle" fill="#991b1b" font-size="10">Fully Private Access</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- AZURE ZONE (Right Side) -->
+  <!-- ============================================ -->
+  <g filter="url(#shadowLg)">
+    <rect x="420" y="70" width="940" height="730" rx="10" fill="#fff" stroke="#60a5fa" stroke-width="1.5" opacity="0.95"/>
+    <!-- Header strip -->
+    <rect x="420" y="70" width="940" height="28" rx="10" fill="url(#azureGrad)"/>
+    <rect x="420" y="88" width="940" height="10" fill="url(#azureGrad)"/>
+    <text x="890" y="89" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">MICROSOFT AZURE</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- VNET boundary inside Azure -->
+  <!-- ============================================ -->
+  <g filter="url(#shadow)">
+    <rect x="450" y="110" width="880" height="660" rx="10" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <!-- VNet icon + label -->
+    <g transform="translate(460, 114) scale(1.2)">
+      <circle cx="12.74" cy="8.99" r="1.16" fill="url(#vn-g1)"/>
+      <circle cx="9.04" cy="9" r="1.16" fill="url(#vn-g2)"/>
+      <circle cx="5.34" cy="9" r="1.16" fill="url(#vn-g3)"/>
+      <path d="M2.61,7.28h.94a.3.3,0,0,1,.3.3v6.94a.6.6,0,0,1-.6.6H2.31a0,0,0,0,1,0,0V7.58a.3.3,0,0,1,.3-.3Z" transform="translate(13.18 16.93) rotate(134.92)" fill="#50e6ff"/>
+      <path d="M2.56,2.91H3.5a.3.3,0,0,1,.3.3v7.43a0,0,0,0,1,0,0H2.86a.6.6,0,0,1-.6-.6V3.21a.3.3,0,0,1,.3-.3Z" transform="translate(5.66 -0.16) rotate(44.92)" fill="#1490df"/>
+      <path d="M14.15,7.28h.94a.6.6,0,0,1,.6.6v6.94a.3.3,0,0,1-.3.3h-.94a.3.3,0,0,1-.3-.3V7.28a0,0,0,0,1,0,0Z" transform="translate(12.32 -7.28) rotate(45.08)" fill="#50e6ff"/>
+      <path d="M14.81,2.91h.94a0,0,0,0,1,0,0v7.43a.3.3,0,0,1-.3.3H14.5a.3.3,0,0,1-.3-.3V3.51a.6.6,0,0,1,.6-.6Z" transform="translate(30.36 0.99) rotate(135.08)" fill="#1490df"/>
+    </g>
+    <text x="490" y="130" font-size="12" font-weight="700" fill="#0369a1">Azure Virtual Network (VNet)</text>
+    <text x="490" y="144" font-size="10" fill="#0369a1">Private Network — No Public Endpoints</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- AI FOUNDRY Section -->
+  <!-- ============================================ -->
+  <g filter="url(#shadow)">
+    <rect x="570" y="160" width="380" height="100" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.2"/>
+    <!-- AI Studio / Foundry icon -->
+    <g transform="translate(700, 170) scale(2.5)">
+      <path d="m12.061.012c.534,0,1.008.401,1.178.984s1.166,4.19,1.166,4.19v7.166h-3.607l.073-12.352h1.19v.012Z" fill="url(#ais-g1)" fill-rule="evenodd" stroke-width="0"/>
+      <path d="m17.356,5.611c0-.255-.206-.449-.449-.449h-2.126c-1.494,0-2.709,1.215-2.709,2.709v4.494h2.575c1.494,0,2.709-1.215,2.709-2.709v-4.045Z" fill="url(#ais-g2)" stroke-width="0"/>
+      <path d="m12.061.012c-.413,0-.741.328-.741.741l-.073,13.64c0,1.992-1.615,3.607-3.607,3.607H1.093c-.316,0-.522-.304-.425-.595L5.915,2.429C6.425.984,7.785.012,9.316.012h2.757-.012Z" fill="url(#ais-g3)" fill-rule="evenodd" stroke-width="0"/>
+    </g>
+    <text x="760" y="225" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="700">Azure AI Foundry</text>
+    <text x="760" y="243" text-anchor="middle" fill="#7c3aed" font-size="10">AI Platform &amp; Model Management</text>
+  </g>
+
+  <!-- Arrow: Foundry → Project -->
+  <line x1="760" y1="260" x2="760" y2="285" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- ============================================ -->
+  <!-- PROJECT Section -->
+  <!-- ============================================ -->
+  <g filter="url(#shadow)">
+    <rect x="620" y="290" width="280" height="70" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="760" y="325" text-anchor="middle" fill="#5b21b6" font-size="12" font-weight="600">Foundry Project</text>
+    <text x="760" y="343" text-anchor="middle" fill="#7c3aed" font-size="10">Resource Scope &amp; Configuration</text>
+  </g>
+
+  <!-- Arrow: Project → Agent -->
+  <line x1="760" y1="360" x2="760" y2="395" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- ============================================ -->
+  <!-- AGENT Section -->
+  <!-- ============================================ -->
+  <g filter="url(#shadow)">
+    <rect x="580" y="400" width="360" height="100" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.2"/>
+    <text x="665" y="435" font-size="28">🤖</text>
+    <text x="760" y="435" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="700">AI Agent</text>
+    <text x="760" y="455" text-anchor="middle" fill="#7c3aed" font-size="10">Orchestration &amp; Reasoning</text>
+    <text x="760" y="470" text-anchor="middle" fill="#7c3aed" font-size="10">Tools, Plugins &amp; Knowledge Retrieval</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- DATA SERVICES (Right side of agent) -->
+  <!-- ============================================ -->
+
+  <!-- Arrow: Agent → Cosmos DB -->
+  <line x1="940" y1="430" x2="1010" y2="430" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <text x="975" y="423" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">data</text>
+
+  <!-- Cosmos DB box -->
+  <g filter="url(#shadow)">
+    <rect x="1020" y="390" width="170" height="100" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+    <!-- Cosmos DB icon -->
+    <g transform="translate(1080, 397) scale(2)">
+      <path d="M2.954,5.266a.175.175,0,0,1-.176-.176h0A2.012,2.012,0,0,0,.769,3.081a.176.176,0,0,1-.176-.175h0a.176.176,0,0,1,.176-.176A2.012,2.012,0,0,0,2.778.72.175.175,0,0,1,2.954.544h0A.175.175,0,0,1,3.13.72h0A2.012,2.012,0,0,0,5.139,2.729a.175.175,0,0,1,.176.176h0a.175.175,0,0,1-.176.176h0A2.011,2.011,0,0,0,3.13,5.09.177.177,0,0,1,2.954,5.266Z" fill="#50e6ff"/>
+      <path d="M15.611,17.456a.141.141,0,0,1-.141-.141h0a1.609,1.609,0,0,0-1.607-1.607.141.141,0,0,1-.141-.14h0a.141.141,0,0,1,.141-.141h0a1.608,1.608,0,0,0,1.607-1.607.141.141,0,0,1,.141-.141h0a.141.141,0,0,1,.141.141h0a1.608,1.608,0,0,0,1.607,1.607.141.141,0,1,1,0,.282h0a1.609,1.609,0,0,0-1.607,1.607A.141.141,0,0,1,15.611,17.456Z" fill="#50e6ff"/>
+      <g>
+        <path d="M14.969,7.53A6.137,6.137,0,1,1,7.574,2.987,6.137,6.137,0,0,1,14.969,7.53Z" fill="url(#cos-g1)"/>
+        <g clip-path="url(#cos-clip1)">
+          <path d="M5.709,13.115A1.638,1.638,0,1,0,5.714,9.84,1.307,1.307,0,0,0,5.721,9.7,1.651,1.651,0,0,0,4.06,8.064H2.832a6.251,6.251,0,0,0,1.595,5.051Z" fill="#f2f2f2"/>
+          <path d="M15.045,7.815c0-.015,0-.03-.007-.044a5.978,5.978,0,0,0-1.406-2.88,1.825,1.825,0,0,0-.289-.09,1.806,1.806,0,0,0-2.3,1.663,2,2,0,0,0-.2-.013,1.737,1.737,0,0,0-.581,3.374,1.451,1.451,0,0,0,.541.1h2.03A13.453,13.453,0,0,0,15.045,7.815Z" fill="#f2f2f2"/>
+        </g>
+      </g>
+      <path d="M17.191,3.832c-.629-1.047-2.1-1.455-4.155-1.149a14.606,14.606,0,0,0-2.082.452,6.456,6.456,0,0,1,1.528.767c.241-.053.483-.116.715-.151A7.49,7.49,0,0,1,14.3,3.662a2.188,2.188,0,0,1,1.959.725h0c.383.638.06,1.729-.886,3a16.723,16.723,0,0,1-4.749,4.051A16.758,16.758,0,0,1,4.8,13.7c-1.564.234-2.682,0-3.065-.636s-.06-1.73.886-2.995c.117-.157.146-.234.279-.392a6.252,6.252,0,0,1,.026-1.63A11.552,11.552,0,0,0,1.756,9.419C.517,11.076.181,12.566.809,13.613a3.165,3.165,0,0,0,2.9,1.249,8.434,8.434,0,0,0,1.251-.1,17.855,17.855,0,0,0,6.219-2.4,17.808,17.808,0,0,0,5.061-4.332C17.483,6.369,17.819,4.88,17.191,3.832Z" fill="#50e6ff"/>
+    </g>
+    <text x="1105" y="455" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">Cosmos DB</text>
+    <text x="1105" y="470" text-anchor="middle" fill="#92400e" font-size="10">Agent State &amp; Data</text>
+  </g>
+
+  <!-- Arrow: Agent → AI Search -->
+  <line x1="940" y1="470" x2="1010" y2="545" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowRight)"/>
+  <text x="985" y="500" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">search</text>
+
+  <!-- AI Search box -->
+  <g filter="url(#shadow)">
+    <rect x="1020" y="520" width="170" height="100" rx="8" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+    <!-- Cognitive Search icon -->
+    <g transform="translate(1080, 527) scale(2)">
+      <path d="M18,11.32a4.12,4.12,0,0,0-3.51-4,5.15,5.15,0,0,0-5.25-5,5.25,5.25,0,0,0-5,3.49A4.86,4.86,0,0,0,0,10.59a5,5,0,0,0,5.07,4.82l.44,0h8.21a.78.78,0,0,0,.22,0A4.13,4.13,0,0,0,18,11.32Z" fill="url(#cs-g1)"/>
+      <path d="M12.33,6.59a3.07,3.07,0,0,0-5.61.85,3.16,3.16,0,0,0,.33,2.27L4.71,12.08a.79.79,0,0,0,0,1.12.78.78,0,0,0,.56.23.76.76,0,0,0,.56-.23l2.33-2.36a3.14,3.14,0,0,0,.81.33,3.08,3.08,0,0,0,3.36-4.58Zm-.54,2.1A2.16,2.16,0,0,1,9.7,10.34a1.79,1.79,0,0,1-.51-.07,1.87,1.87,0,0,1-.7-.32,2.13,2.13,0,0,1-.56-.56,2.17,2.17,0,0,1-.31-1.73A2.14,2.14,0,0,1,9.7,6a2.31,2.31,0,0,1,.52.06,2.18,2.18,0,0,1,1.32,1A2.13,2.13,0,0,1,11.79,8.69Z" fill="#f2f2f2"/>
+      <ellipse cx="9.69" cy="8.18" rx="2.15" ry="2.16" fill="#83b9f9"/>
+    </g>
+    <text x="1105" y="588" text-anchor="middle" fill="#1e3a8a" font-size="12" font-weight="600">AI Search</text>
+    <text x="1105" y="603" text-anchor="middle" fill="#2563eb" font-size="10">Knowledge Index</text>
+  </g>
+
+  <!-- Arrow: Agent → Storage -->
+  <line x1="760" y1="500" x2="760" y2="545" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- Storage Account box -->
+  <g filter="url(#shadow)">
+    <rect x="660" y="550" width="200" height="100" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+    <!-- Storage icon -->
+    <g transform="translate(735, 558) scale(2)">
+      <path d="M.5,5.79h17a0,0,0,0,1,0,0v9.48a.57.57,0,0,1-.57.57H1.07a.57.57,0,0,1-.57-.57V5.79A0,0,0,0,1,.5,5.79Z" fill="url(#sa-g1)"/>
+      <path d="M1.07,2.17H16.93a.57.57,0,0,1,.57.57V5.79a0,0,0,0,1,0,0H.5a0,0,0,0,1,0,0V2.73A.57.57,0,0,1,1.07,2.17Z" fill="#37c2b1"/>
+      <path d="M2.81,6.89H15.18a.27.27,0,0,1,.26.27v1.4a.27.27,0,0,1-.26.27H2.81a.27.27,0,0,1-.26-.27V7.16A.27.27,0,0,1,2.81,6.89Z" fill="#fff"/>
+      <path d="M2.82,9.68H15.19a.27.27,0,0,1,.26.27v1.41a.27.27,0,0,1-.26.27H2.82a.27.27,0,0,1-.26-.27V10A.27.27,0,0,1,2.82,9.68Z" fill="#37c2b1"/>
+      <path d="M2.82,12.5H15.19a.27.27,0,0,1,.26.27v1.41a.27.27,0,0,1-.26.27H2.82a.27.27,0,0,1-.26-.27V12.77A.27.27,0,0,1,2.82,12.5Z" fill="#258277"/>
+    </g>
+    <text x="760" y="618" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">Storage Account</text>
+    <text x="760" y="633" text-anchor="middle" fill="#92400e" font-size="10">Files &amp; Blob Data</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- PRIVATE ENDPOINTS Section -->
+  <!-- ============================================ -->
+  <g filter="url(#shadow)">
+    <rect x="470" y="680" width="830" height="80" rx="8" fill="#eef2ff" stroke="#818cf8" stroke-width="1.2"/>
+    <!-- Private Endpoint icon -->
+    <g transform="translate(490, 698) scale(2)">
+      <path d="M7.85,13.342a1.738,1.738,0,1,0,2.436-2.479,1.715,1.715,0,0,0-.626-.389V3.009H8.548v7.444a1.729,1.729,0,0,0-.7,2.891Z" fill="#b3b3b3"/>
+      <circle cx="9.084" cy="2.209" r="1.738" fill="url(#pe-g1)"/>
+      <g>
+        <path d="M2.632,10.449h.937a.3.3,0,0,1,.3.3v6.909a.6.6,0,0,1-.6.6H2.332a0,0,0,0,1,0,0V10.749A.3.3,0,0,1,2.632,10.449Z" transform="translate(15.452 22.292) rotate(134.919)" fill="#50e6ff"/>
+        <path d="M2.581,6.093h.937a.3.3,0,0,1,.3.3v7.4a0,0,0,0,1,0,0H2.88a.6.6,0,0,1-.6-.6v-6.8A.3.3,0,0,1,2.581,6.093Z" transform="translate(7.91 0.749) rotate(44.919)" fill="#1490df"/>
+        <path d="M14.132,10.449h.937a.6.6,0,0,1,.6.6v6.909a.3.3,0,0,1-.3.3h-.937a.3.3,0,0,1-.3-.3V10.449a0,0,0,0,1,0,0Z" transform="translate(14.542 -6.333) rotate(45.081)" fill="#50e6ff"/>
+        <path d="M14.782,6.093h.937a0,0,0,0,1,0,0v7.4a.3.3,0,0,1-.3.3h-.937a.3.3,0,0,1-.3-.3v-6.8A.6.6,0,0,1,14.782,6.093Z" transform="translate(32.558 6.424) rotate(135.081)" fill="#1490df"/>
+      </g>
+      <circle cx="9.065" cy="12.106" r="1.738" fill="url(#pe-g2)"/>
+    </g>
+    <text x="545" y="717" fill="#3730a3" font-size="14" font-weight="700">Private Endpoints</text>
+    <text x="545" y="735" fill="#4f46e5" font-size="10">Secure connectivity for all Azure services — No public internet exposure</text>
+    <!-- PEP labels -->
+    <text x="870" y="710" fill="#4f46e5" font-size="10" font-weight="600">• Cosmos DB PEP</text>
+    <text x="870" y="725" fill="#4f46e5" font-size="10" font-weight="600">• AI Search PEP</text>
+    <text x="1070" y="710" fill="#4f46e5" font-size="10" font-weight="600">• Storage PEP</text>
+    <text x="1070" y="725" fill="#4f46e5" font-size="10" font-weight="600">• AI Foundry PEP</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- CONNECTION ARROWS (On-Prem → Azure) -->
+  <!-- ============================================ -->
+
+  <!-- ExpressRoute arrow: On-Prem → Azure VNet -->
+  <line x1="320" y1="515" x2="450" y2="515" stroke="#a67af4" stroke-width="2.5" marker-end="url(#arrowBlueRight)"/>
+  <text x="385" y="505" text-anchor="middle" font-size="10" fill="#5b21b6" font-weight="600">ExpressRoute</text>
+
+  <!-- VPN S2S arrow: On-Prem → Azure VNet -->
+  <line x1="320" y1="395" x2="450" y2="395" stroke="#10b981" stroke-width="2" marker-end="url(#arrowBlueRight)"/>
+  <text x="385" y="385" text-anchor="middle" font-size="10" fill="#059669" font-weight="600">VPN S2S</text>
+
+  <!-- DNS dashed line: On-Prem DNS → VNet (private DNS) -->
+  <line x1="320" y1="165" x2="450" y2="165" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrowRight)"/>
+  <text x="385" y="155" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">DNS Resolution</text>
+
+  <!-- User arrow to VPN -->
+  <line x1="200" y1="320" x2="200" y2="345" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- ============================================ -->
+  <!-- NUMBERED FLOW STEPS -->
+  <!-- ============================================ -->
+  <g font-size="10" fill="#334155">
+    <!-- Step 1 -->
+    <circle cx="60" cy="833" r="12" fill="#0078d4"/>
+    <text x="60" y="837" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">1</text>
+    <text x="80" y="837" font-size="10" fill="#334155">On-prem users connect via VPN S2S or ExpressRoute — no public internet path</text>
+
+    <!-- Step 2 -->
+    <circle cx="60" cy="860" r="12" fill="#0078d4"/>
+    <text x="60" y="864" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">2</text>
+    <text x="80" y="864" font-size="10" fill="#334155">Traffic enters Azure VNet via private connectivity; DNS resolves to private endpoints</text>
+
+    <!-- Step 3 -->
+    <circle cx="700" cy="833" r="12" fill="#7c3aed"/>
+    <text x="700" y="837" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">3</text>
+    <text x="720" y="837" font-size="10" fill="#334155">AI Foundry Project hosts the Agent with tools &amp; knowledge</text>
+
+    <!-- Step 4 -->
+    <circle cx="700" cy="860" r="12" fill="#7c3aed"/>
+    <text x="700" y="864" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">4</text>
+    <text x="720" y="864" font-size="10" fill="#334155">Agent accesses Cosmos DB, AI Search &amp; Storage via Private Endpoints</text>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- LEGEND -->
+  <!-- ============================================ -->
+  <g transform="translate(60, 890)" font-size="10">
+    <text x="0" y="12" font-weight="700" fill="#475569" font-size="10">LEGEND:</text>
+    <!-- On-Prem -->
+    <rect x="70" y="2" width="14" height="14" rx="3" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <text x="90" y="13" fill="#475569">On-Premises</text>
+    <!-- AI / Agents -->
+    <rect x="175" y="2" width="14" height="14" rx="3" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="195" y="13" fill="#475569">AI Foundry</text>
+    <!-- Data -->
+    <rect x="275" y="2" width="14" height="14" rx="3" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+    <text x="295" y="13" fill="#475569">Data Services</text>
+    <!-- Networking -->
+    <rect x="390" y="2" width="14" height="14" rx="3" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="410" y="13" fill="#475569">Networking</text>
+    <!-- Security -->
+    <rect x="495" y="2" width="14" height="14" rx="3" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+    <text x="515" y="13" fill="#475569">Private Endpoints</text>
+    <!-- VNet -->
+    <rect x="620" y="2" width="14" height="14" rx="3" fill="#f0f9ff" stroke="#0284c7" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="640" y="13" fill="#475569">VNet Boundary</text>
+    <!-- Data Flow arrow -->
+    <line x1="740" y1="9" x2="780" y2="9" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowRight)"/>
+    <text x="790" y="13" fill="#475569">Data Flow</text>
+  </g>
+</svg>

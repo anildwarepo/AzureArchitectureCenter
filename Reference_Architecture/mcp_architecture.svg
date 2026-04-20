@@ -1,0 +1,446 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1380 920" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f4f8"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="azureGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0078d4"/>
+      <stop offset="100%" stop-color="#005a9e"/>
+    </linearGradient>
+    <linearGradient id="agentGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#5b21b6"/>
+    </linearGradient>
+    <linearGradient id="feGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="mcpAzureGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="mcpOnpremGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="lobGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="llmGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="apimGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="apiCenterGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadowLg" x="-2%" y="-4%" width="104%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+    <!-- Arrow marker -->
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowUp" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowBi" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <linearGradient id="insightsGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e74c9e"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1380" height="920" rx="12" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="600" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1e293b">MCP Architecture — Agentic Enterprise Platform</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 1: Frontend Applications (top) -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadowLg)">
+    <rect x="60" y="58" width="1080" height="100" rx="10" fill="#fff" stroke="#059669" stroke-width="1.5" opacity="0.95"/>
+    <rect x="60" y="58" width="1080" height="28" rx="10" fill="url(#feGrad)"/>
+    <rect x="60" y="76" width="1080" height="10" fill="url(#feGrad)"/>
+    <text x="600" y="77" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">FRONTEND APPLICATIONS</text>
+  </g>
+  <!-- FE boxes -->
+  <g font-size="12" font-weight="600">
+    <rect x="100" y="100" width="140" height="44" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="170" y="118" text-anchor="middle" fill="#065f46" font-size="10">🌐</text>
+    <text x="170" y="133" text-anchor="middle" fill="#065f46">Web App</text>
+
+    <rect x="270" y="100" width="140" height="44" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="340" y="118" text-anchor="middle" fill="#065f46" font-size="10">📱</text>
+    <text x="340" y="133" text-anchor="middle" fill="#065f46">Mobile App</text>
+
+    <rect x="440" y="100" width="140" height="44" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="510" y="118" text-anchor="middle" fill="#065f46" font-size="10">💬</text>
+    <text x="510" y="133" text-anchor="middle" fill="#065f46">Chat / Copilot UI</text>
+
+    <rect x="610" y="100" width="140" height="44" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="680" y="118" text-anchor="middle" fill="#065f46" font-size="10">📊</text>
+    <text x="680" y="133" text-anchor="middle" fill="#065f46">Dashboard</text>
+
+    <rect x="780" y="100" width="140" height="44" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="850" y="118" text-anchor="middle" fill="#065f46" font-size="10">🤖</text>
+    <text x="850" y="133" text-anchor="middle" fill="#065f46">Teams Bot</text>
+
+    <rect x="950" y="100" width="140" height="44" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="1020" y="118" text-anchor="middle" fill="#065f46" font-size="10">⚙️</text>
+    <text x="1020" y="133" text-anchor="middle" fill="#065f46">Automation / CLI</text>
+  </g>
+
+  <!-- Arrow: FE → Agents -->
+  <line x1="600" y1="158" x2="600" y2="182" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <text x="618" y="175" font-size="10" fill="#64748b" font-style="italic">Agentic Workflows</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2: Agent Layer -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadowLg)">
+    <rect x="60" y="188" width="1080" height="120" rx="10" fill="#fff" stroke="#7c3aed" stroke-width="1.5" opacity="0.95"/>
+    <rect x="60" y="188" width="1080" height="28" rx="10" fill="url(#agentGrad)"/>
+    <rect x="60" y="206" width="1080" height="10" fill="url(#agentGrad)"/>
+    <text x="600" y="207" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">AGENT LAYER</text>
+  </g>
+  <!-- Agent boxes -->
+  <g font-size="12" font-weight="600">
+    <rect x="90" y="228" width="170" height="62" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="175" y="250" text-anchor="middle" fill="#5b21b6" font-size="9">🧠</text>
+    <text x="175" y="264" text-anchor="middle" fill="#5b21b6">Orchestrator Agent</text>
+    <text x="175" y="278" text-anchor="middle" fill="#7c3aed" font-size="10">(Planning &amp; Routing)</text>
+
+    <rect x="280" y="228" width="170" height="62" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="365" y="250" text-anchor="middle" fill="#5b21b6" font-size="9">🔍</text>
+    <text x="365" y="264" text-anchor="middle" fill="#5b21b6">Retrieval Agent</text>
+    <text x="365" y="278" text-anchor="middle" fill="#7c3aed" font-size="10">(Search &amp; RAG)</text>
+
+    <rect x="470" y="228" width="170" height="62" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="555" y="250" text-anchor="middle" fill="#5b21b6" font-size="9">⚡</text>
+    <text x="555" y="264" text-anchor="middle" fill="#5b21b6">Action Agent</text>
+    <text x="555" y="278" text-anchor="middle" fill="#7c3aed" font-size="10">(Tool Execution)</text>
+
+    <rect x="660" y="228" width="170" height="62" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="745" y="250" text-anchor="middle" fill="#5b21b6" font-size="9">📋</text>
+    <text x="745" y="264" text-anchor="middle" fill="#5b21b6">Domain Agent</text>
+    <text x="745" y="278" text-anchor="middle" fill="#7c3aed" font-size="10">(Business Logic)</text>
+
+    <rect x="850" y="228" width="170" height="62" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="935" y="250" text-anchor="middle" fill="#5b21b6" font-size="9">🔄</text>
+    <text x="935" y="264" text-anchor="middle" fill="#5b21b6">Multi-Agent Workflow</text>
+    <text x="935" y="278" text-anchor="middle" fill="#7c3aed" font-size="10">(Handoffs &amp; Chains)</text>
+  </g>
+
+  <!-- Arrows: Agents → APIM / LLM -->
+  <line x1="400" y1="308" x2="400" y2="345" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <line x1="800" y1="308" x2="800" y2="345" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 3: API Management + API Center + LLM Endpoints -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadowLg)">
+    <rect x="60" y="350" width="1080" height="145" rx="10" fill="#fff" stroke="#0ea5e9" stroke-width="1.5" opacity="0.95"/>
+    <rect x="60" y="350" width="1080" height="28" rx="10" fill="#0ea5e9"/>
+    <rect x="60" y="368" width="1080" height="10" fill="#0ea5e9"/>
+    <text x="600" y="369" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">API GOVERNANCE &amp; MODEL ENDPOINTS</text>
+  </g>
+
+  <!-- Azure API Management -->
+  <g filter="url(#shadow)">
+    <rect x="85" y="390" width="320" height="90" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect x="85" y="390" width="320" height="24" rx="8" fill="url(#apimGrad)"/>
+    <rect x="85" y="406" width="320" height="8" fill="url(#apimGrad)"/>
+    <text x="245" y="407" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Azure API Management</text>
+    <text x="245" y="438" text-anchor="middle" fill="#0369a1" font-size="10">• MCP Server Gateway &amp; Proxy</text>
+    <text x="245" y="453" text-anchor="middle" fill="#0369a1" font-size="10">• Auth, Rate Limiting, Policies</text>
+    <text x="245" y="468" text-anchor="middle" fill="#0369a1" font-size="10">• Monitoring &amp; Analytics</text>
+  </g>
+
+  <!-- Azure API Center -->
+  <g filter="url(#shadow)">
+    <rect x="440" y="390" width="320" height="90" rx="8" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <rect x="440" y="390" width="320" height="24" rx="8" fill="url(#apiCenterGrad)"/>
+    <rect x="440" y="406" width="320" height="8" fill="url(#apiCenterGrad)"/>
+    <text x="600" y="407" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Azure API Center</text>
+    <text x="600" y="438" text-anchor="middle" fill="#6d28d9" font-size="10">• MCP Server API Definitions</text>
+    <text x="600" y="453" text-anchor="middle" fill="#6d28d9" font-size="10">• Design-Time Metadata &amp; Specs</text>
+    <text x="600" y="468" text-anchor="middle" fill="#6d28d9" font-size="10">• API Catalog &amp; Discovery</text>
+  </g>
+
+  <!-- Bidirectional arrow between APIM and API Center -->
+  <line x1="405" y1="435" x2="440" y2="435" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowBi)"/>
+  <text x="423" y="430" text-anchor="middle" font-size="10" fill="#7c3aed">sync</text>
+
+  <!-- LLM Model Endpoints -->
+  <g filter="url(#shadow)">
+    <rect x="795" y="390" width="320" height="90" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+    <rect x="795" y="390" width="320" height="24" rx="8" fill="url(#llmGrad)"/>
+    <rect x="795" y="406" width="320" height="8" fill="url(#llmGrad)"/>
+    <text x="955" y="407" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">LLM Model Endpoints</text>
+  </g>
+  <!-- LLM sub-items -->
+  <rect x="810" y="422" width="135" height="48" rx="6" fill="#fff" stroke="#f87171" stroke-width="1"/>
+  <text x="877" y="440" text-anchor="middle" fill="#991b1b" font-size="12" font-weight="600">Azure OpenAI</text>
+  <text x="877" y="453" text-anchor="middle" fill="#b91c1c" font-size="10">GPT-4.1 / o3 / o4-mini</text>
+  <text x="877" y="464" text-anchor="middle" fill="#b91c1c" font-size="10">Azure Foundry</text>
+
+  <rect x="960" y="422" width="140" height="48" rx="6" fill="#fff" stroke="#f87171" stroke-width="1"/>
+  <text x="1030" y="440" text-anchor="middle" fill="#991b1b" font-size="12" font-weight="600">On-Premises LLMs</text>
+  <text x="1030" y="453" text-anchor="middle" fill="#b91c1c" font-size="10">Llama / Mistral / Phi</text>
+  <text x="1030" y="464" text-anchor="middle" fill="#b91c1c" font-size="10">Self-Hosted Inference</text>
+
+  <!-- Arrow: APIM → MCP Servers -->
+  <line x1="245" y1="495" x2="245" y2="530" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <text x="263" y="518" font-size="10" fill="#64748b" font-style="italic">SSE / Streamable HTTP</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 4: MCP Servers (Azure + On-Premises) -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadowLg)">
+    <rect x="60" y="535" width="1080" height="140" rx="10" fill="#fff" stroke="#2563eb" stroke-width="1.5" opacity="0.95"/>
+    <rect x="60" y="535" width="1080" height="28" rx="10" fill="#1e40af"/>
+    <rect x="60" y="553" width="1080" height="10" fill="#1e40af"/>
+    <text x="600" y="554" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">MCP SERVERS</text>
+  </g>
+
+  <!-- Azure MCP Servers -->
+  <g filter="url(#shadow)">
+    <rect x="85" y="575" width="500" height="85" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
+    <text x="335" y="593" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">☁️  Azure-Hosted MCP Servers</text>
+  </g>
+  <rect x="100" y="602" width="110" height="48" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="155" y="621" text-anchor="middle" fill="#1e3a8a" font-size="12" font-weight="600">Database</text>
+  <text x="155" y="635" text-anchor="middle" fill="#1e3a8a" font-size="10">MCP Server</text>
+  <text x="155" y="646" text-anchor="middle" fill="#3b82f6" font-size="10">(SQL / NoSQL / Graph)</text>
+
+  <rect x="220" y="602" width="110" height="48" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="275" y="621" text-anchor="middle" fill="#1e3a8a" font-size="12" font-weight="600">Search</text>
+  <text x="275" y="635" text-anchor="middle" fill="#1e3a8a" font-size="10">MCP Server</text>
+  <text x="275" y="646" text-anchor="middle" fill="#3b82f6" font-size="10">(Full-Text / Vector)</text>
+
+  <rect x="340" y="602" width="110" height="48" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="395" y="621" text-anchor="middle" fill="#1e3a8a" font-size="12" font-weight="600">Storage</text>
+  <text x="395" y="635" text-anchor="middle" fill="#1e3a8a" font-size="10">MCP Server</text>
+  <text x="395" y="646" text-anchor="middle" fill="#3b82f6" font-size="10">(Blob / File / Object)</text>
+
+  <rect x="460" y="602" width="110" height="48" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="515" y="621" text-anchor="middle" fill="#1e3a8a" font-size="12" font-weight="600">Messaging</text>
+  <text x="515" y="635" text-anchor="middle" fill="#1e3a8a" font-size="10">MCP Server</text>
+  <text x="515" y="646" text-anchor="middle" fill="#3b82f6" font-size="10">(Queue / Event Bus)</text>
+
+  <!-- On-Premises MCP Servers -->
+  <g filter="url(#shadow)">
+    <rect x="615" y="575" width="500" height="85" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="1.2"/>
+    <text x="865" y="593" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">🏢  On-Premises MCP Servers</text>
+  </g>
+  <rect x="630" y="602" width="110" height="48" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="685" y="621" text-anchor="middle" fill="#334155" font-size="12" font-weight="600">ERP</text>
+  <text x="685" y="635" text-anchor="middle" fill="#334155" font-size="10">MCP Server</text>
+  <text x="685" y="646" text-anchor="middle" fill="#64748b" font-size="10">(Enterprise Resource)</text>
+
+  <rect x="750" y="602" width="110" height="48" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="805" y="621" text-anchor="middle" fill="#334155" font-size="12" font-weight="600">CRM</text>
+  <text x="805" y="635" text-anchor="middle" fill="#334155" font-size="10">MCP Server</text>
+  <text x="805" y="646" text-anchor="middle" fill="#64748b" font-size="10">(Customer Mgmt)</text>
+
+  <rect x="870" y="602" width="110" height="48" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="925" y="621" text-anchor="middle" fill="#334155" font-size="12" font-weight="600">Legacy</text>
+  <text x="925" y="635" text-anchor="middle" fill="#334155" font-size="10">MCP Server</text>
+  <text x="925" y="646" text-anchor="middle" fill="#64748b" font-size="10">(Mainframe / Host)</text>
+
+  <rect x="990" y="602" width="110" height="48" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="1045" y="621" text-anchor="middle" fill="#334155" font-size="12" font-weight="600">File / Doc</text>
+  <text x="1045" y="635" text-anchor="middle" fill="#334155" font-size="10">MCP Server</text>
+  <text x="1045" y="646" text-anchor="middle" fill="#64748b" font-size="10">(DMS / File Store)</text>
+
+  <!-- Arrow: MCP Servers → LOB Systems -->
+  <line x1="335" y1="675" x2="335" y2="708" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+  <line x1="865" y1="675" x2="865" y2="708" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 5: Backend LOB Systems -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadowLg)">
+    <rect x="60" y="713" width="1080" height="130" rx="10" fill="#fff" stroke="#d97706" stroke-width="1.5" opacity="0.95"/>
+    <rect x="60" y="713" width="1080" height="28" rx="10" fill="url(#lobGrad)"/>
+    <rect x="60" y="731" width="1080" height="10" fill="url(#lobGrad)"/>
+    <text x="600" y="732" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">BACKEND LINE-OF-BUSINESS SYSTEMS</text>
+  </g>
+
+  <!-- Azure LOB -->
+  <g filter="url(#shadow)">
+    <rect x="85" y="752" width="500" height="78" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="335" y="770" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">☁️  Cloud Data Sources</text>
+  </g>
+  <rect x="100" y="780" width="90" height="40" rx="5" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+  <text x="145" y="797" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">Relational DB</text>
+  <text x="145" y="810" text-anchor="middle" fill="#92400e" font-size="10">SQL / Graph</text>
+
+  <rect x="200" y="780" width="90" height="40" rx="5" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+  <text x="245" y="797" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">Document DB</text>
+  <text x="245" y="810" text-anchor="middle" fill="#92400e" font-size="10">NoSQL Store</text>
+
+  <rect x="300" y="780" width="90" height="40" rx="5" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+  <text x="345" y="797" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">Search Index</text>
+  <text x="345" y="810" text-anchor="middle" fill="#92400e" font-size="10">Vector + Keyword</text>
+
+  <rect x="400" y="780" width="90" height="40" rx="5" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+  <text x="445" y="797" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">Object Store</text>
+  <text x="445" y="810" text-anchor="middle" fill="#92400e" font-size="10">Blob / Files</text>
+
+  <rect x="500" y="780" width="75" height="40" rx="5" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+  <text x="537" y="797" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">Message Bus</text>
+  <text x="537" y="810" text-anchor="middle" fill="#92400e" font-size="10">Queue / Event</text>
+
+  <!-- On-Premises LOB -->
+  <g filter="url(#shadow)">
+    <rect x="615" y="752" width="500" height="78" rx="8" fill="#f8fafc" stroke="#a8a29e" stroke-width="1.2"/>
+    <text x="865" y="770" text-anchor="middle" font-size="12" font-weight="700" fill="#44403c">🏢  On-Premises Data Sources</text>
+  </g>
+  <rect x="630" y="780" width="90" height="40" rx="5" fill="#f5f5f4" stroke="#d6d3d1" stroke-width="1"/>
+  <text x="675" y="797" text-anchor="middle" fill="#44403c" font-size="12" font-weight="600">ERP System</text>
+  <text x="675" y="810" text-anchor="middle" fill="#57534e" font-size="10">Enterprise RP</text>
+
+  <rect x="730" y="780" width="90" height="40" rx="5" fill="#f5f5f4" stroke="#d6d3d1" stroke-width="1"/>
+  <text x="775" y="797" text-anchor="middle" fill="#44403c" font-size="12" font-weight="600">RDBMS</text>
+  <text x="775" y="810" text-anchor="middle" fill="#57534e" font-size="10">On-Prem SQL</text>
+
+  <rect x="830" y="780" width="90" height="40" rx="5" fill="#f5f5f4" stroke="#d6d3d1" stroke-width="1"/>
+  <text x="875" y="797" text-anchor="middle" fill="#44403c" font-size="12" font-weight="600">Mainframe</text>
+  <text x="875" y="810" text-anchor="middle" fill="#57534e" font-size="10">Legacy Host</text>
+
+  <rect x="930" y="780" width="90" height="40" rx="5" fill="#f5f5f4" stroke="#d6d3d1" stroke-width="1"/>
+  <text x="975" y="797" text-anchor="middle" fill="#44403c" font-size="12" font-weight="600">File Store</text>
+  <text x="975" y="810" text-anchor="middle" fill="#57534e" font-size="10">NFS / SMB</text>
+
+  <rect x="1030" y="780" width="75" height="40" rx="5" fill="#f5f5f4" stroke="#d6d3d1" stroke-width="1"/>
+  <text x="1067" y="797" text-anchor="middle" fill="#44403c" font-size="12" font-weight="600">Identity</text>
+  <text x="1067" y="810" text-anchor="middle" fill="#57534e" font-size="10">Directory Svc</text>
+
+  <!-- ============================================================ -->
+  <!-- Flow Labels on left side -->
+  <!-- ============================================================ -->
+  <g font-size="10" fill="#64748b" font-weight="600" transform="rotate(-90)">
+    <text x="-130" y="42" text-anchor="middle">END USERS</text>
+    <text x="-265" y="42" text-anchor="middle">AI AGENTS</text>
+    <text x="-440" y="42" text-anchor="middle">GOVERNANCE</text>
+    <text x="-620" y="42" text-anchor="middle">TOOL SERVERS</text>
+    <text x="-790" y="42" text-anchor="middle">DATA SOURCES</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- Legend -->
+  <!-- ============================================================ -->
+  <g transform="translate(60, 860)" font-size="10">
+    <text x="0" y="12" font-weight="700" fill="#475569" font-size="10">LEGEND:</text>
+    <rect x="80" y="2" width="14" height="14" rx="3" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="100" y="13" fill="#475569">Frontend Apps</text>
+    <rect x="185" y="2" width="14" height="14" rx="3" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="205" y="13" fill="#475569">AI Agents</text>
+    <rect x="270" y="2" width="14" height="14" rx="3" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+    <text x="290" y="13" fill="#475569">API Management</text>
+    <rect x="390" y="2" width="14" height="14" rx="3" fill="#faf5ff" stroke="#7c3aed" stroke-width="1"/>
+    <text x="410" y="13" fill="#475569">API Center</text>
+    <rect x="480" y="2" width="14" height="14" rx="3" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+    <text x="500" y="13" fill="#475569">LLM Endpoints</text>
+    <rect x="590" y="2" width="14" height="14" rx="3" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+    <text x="610" y="13" fill="#475569">Azure MCP</text>
+    <rect x="680" y="2" width="14" height="14" rx="3" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <text x="700" y="13" fill="#475569">On-Prem MCP</text>
+    <rect x="785" y="2" width="14" height="14" rx="3" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+    <text x="805" y="13" fill="#475569">Cloud Data</text>
+    <rect x="870" y="2" width="14" height="14" rx="3" fill="#f5f5f4" stroke="#d6d3d1" stroke-width="1"/>
+    <text x="890" y="13" fill="#475569">On-Prem Data</text>
+    <rect x="965" y="2" width="14" height="14" rx="3" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+    <text x="985" y="13" fill="#475569">App Insights</text>
+    <line x1="1055" y1="9" x2="1080" y2="9" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowDown)"/>
+    <text x="1088" y="13" fill="#475569">Data Flow</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- Additional connection lines for visual completeness -->
+  <!-- ============================================================ -->
+  <!-- Vertical dashed lines from API Center down to MCP layer to show definitions linkage -->
+  <line x1="600" y1="480" x2="600" y2="535" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="608" y="512" font-size="10" fill="#7c3aed" font-style="italic">API Definitions</text>
+
+  <!-- ============================================================ -->
+  <!-- App Insights & Telemetry (vertical sidebar spanning all layers) -->
+  <!-- ============================================================ -->
+  <g filter="url(#shadowLg)">
+    <rect x="1160" y="58" width="190" height="785" rx="10" fill="#fff" stroke="#e74c9e" stroke-width="1.5" opacity="0.95"/>
+    <rect x="1160" y="58" width="190" height="28" rx="10" fill="url(#insightsGrad)"/>
+    <rect x="1160" y="76" width="190" height="10" fill="url(#insightsGrad)"/>
+    <text x="1255" y="77" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="0.5">OBSERVABILITY</text>
+  </g>
+
+  <!-- App Insights box -->
+  <rect x="1175" y="100" width="160" height="65" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="1255" y="118" text-anchor="middle" fill="#9d174d" font-size="10">📊</text>
+  <text x="1255" y="132" text-anchor="middle" fill="#9d174d" font-size="12" font-weight="700">App Insights</text>
+  <text x="1255" y="146" text-anchor="middle" fill="#be185d" font-size="10">Distributed Tracing</text>
+  <text x="1255" y="157" text-anchor="middle" fill="#be185d" font-size="10">Live Metrics</text>
+
+  <!-- Telemetry Analytics box -->
+  <rect x="1175" y="178" width="160" height="55" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="1255" y="196" text-anchor="middle" fill="#9d174d" font-size="10">📈</text>
+  <text x="1255" y="209" text-anchor="middle" fill="#9d174d" font-size="12" font-weight="700">Telemetry Analytics</text>
+  <text x="1255" y="222" text-anchor="middle" fill="#be185d" font-size="10">KQL Queries &amp; Dashboards</text>
+
+  <!-- Logging box -->
+  <rect x="1175" y="246" width="160" height="55" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="1255" y="264" text-anchor="middle" fill="#9d174d" font-size="10">📝</text>
+  <text x="1255" y="277" text-anchor="middle" fill="#9d174d" font-size="12" font-weight="700">Logging</text>
+  <text x="1255" y="290" text-anchor="middle" fill="#be185d" font-size="10">Structured Logs / Traces</text>
+
+  <!-- Alerts box -->
+  <rect x="1175" y="314" width="160" height="55" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="1255" y="332" text-anchor="middle" fill="#9d174d" font-size="10">🔔</text>
+  <text x="1255" y="345" text-anchor="middle" fill="#9d174d" font-size="12" font-weight="700">Alerts &amp; Notifications</text>
+  <text x="1255" y="358" text-anchor="middle" fill="#be185d" font-size="10">Smart Detection / Rules</text>
+
+  <!-- Monitoring targets vertical list -->
+  <text x="1255" y="395" text-anchor="middle" fill="#831843" font-size="12" font-weight="700">Monitors:</text>
+
+  <rect x="1185" y="405" width="140" height="24" rx="5" fill="#fce7f3" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1255" y="421" text-anchor="middle" fill="#9d174d" font-size="10">Frontend Performance</text>
+
+  <rect x="1185" y="435" width="140" height="24" rx="5" fill="#fce7f3" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1255" y="451" text-anchor="middle" fill="#9d174d" font-size="10">Agent Execution Traces</text>
+
+  <rect x="1185" y="465" width="140" height="24" rx="5" fill="#fce7f3" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1255" y="481" text-anchor="middle" fill="#9d174d" font-size="10">APIM Gateway Metrics</text>
+
+  <rect x="1185" y="495" width="140" height="24" rx="5" fill="#fce7f3" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1255" y="511" text-anchor="middle" fill="#9d174d" font-size="10">LLM Token &amp; Latency</text>
+
+  <rect x="1185" y="525" width="140" height="24" rx="5" fill="#fce7f3" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1255" y="541" text-anchor="middle" fill="#9d174d" font-size="10">MCP Server Health</text>
+
+  <rect x="1185" y="555" width="140" height="24" rx="5" fill="#fce7f3" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1255" y="571" text-anchor="middle" fill="#9d174d" font-size="10">Backend Data Sources</text>
+
+  <!-- Dashed connection lines from each layer to the sidebar -->
+  <line x1="1140" y1="122" x2="1160" y2="122" stroke="#ec4899" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="1140" y1="259" x2="1160" y2="259" stroke="#ec4899" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="1140" y1="435" x2="1160" y2="435" stroke="#ec4899" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="1140" y1="605" x2="1160" y2="605" stroke="#ec4899" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="1140" y1="778" x2="1160" y2="778" stroke="#ec4899" stroke-width="1" stroke-dasharray="3,3"/>
+
+</svg>
