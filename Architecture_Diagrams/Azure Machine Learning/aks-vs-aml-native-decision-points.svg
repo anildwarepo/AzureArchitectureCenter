@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="gradTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gradAks" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="gradAml" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" rx="12" fill="#f8fafc"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="60" rx="12" fill="url(#gradTitle)"/>
+  <rect x="0" y="30" width="1200" height="30" fill="url(#gradTitle)"/>
+  <text x="600" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" letter-spacing="1">Key Decision Points: AKS Inference Clusters vs AML Native Managed Endpoints</text>
+
+  <!-- ═══════ LEFT COLUMN: When to Use AKS ═══════ -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="80" width="550" height="580" rx="10" fill="#fff" stroke="#10b981" stroke-width="2"/>
+    <rect x="40" y="80" width="550" height="36" rx="10" fill="url(#gradAks)"/>
+    <rect x="40" y="106" width="550" height="10" fill="url(#gradAks)"/>
+    <text x="315" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" letter-spacing="1">✅  WHEN TO USE AKS</text>
+  </g>
+
+  <!-- AKS talking points -->
+  <g font-size="12" fill="#1e293b">
+    <!-- Point 1 -->
+    <circle cx="70" cy="140" r="8" fill="#059669"/>
+    <text x="70" y="144" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">1</text>
+    <text x="86" y="138" font-weight="700" fill="#065f46">Full VM SKU Flexibility (CPU &amp; GPU)</text>
+    <text x="86" y="153" font-size="11" fill="#475569">Access to all Azure VM families including NC, ND, NV-series</text>
+    <text x="86" y="167" font-size="11" fill="#475569">GPUs. Mix CPU and GPU node pools in a single cluster.</text>
+
+    <!-- Point 2 -->
+    <circle cx="70" cy="195" r="8" fill="#059669"/>
+    <text x="70" y="199" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">2</text>
+    <text x="86" y="193" font-weight="700" fill="#065f46">On-Demand Capacity Reservations (ODCR)</text>
+    <text x="86" y="208" font-size="11" fill="#475569">Reserve GPU capacity in advance for predictable workloads.</text>
+    <text x="86" y="222" font-size="11" fill="#475569">Guaranteed availability for critical inference pipelines.</text>
+
+    <!-- Point 3 -->
+    <circle cx="70" cy="250" r="8" fill="#059669"/>
+    <text x="70" y="254" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">3</text>
+    <text x="86" y="248" font-weight="700" fill="#065f46">Rolling Upgrades &amp; Zero-Downtime Deployments</text>
+    <text x="86" y="263" font-size="11" fill="#475569">Kubernetes-native rolling updates, surge upgrades, and</text>
+    <text x="86" y="277" font-size="11" fill="#475569">pod disruption budgets for seamless model version rollouts.</text>
+
+    <!-- Point 4 -->
+    <circle cx="70" cy="305" r="8" fill="#059669"/>
+    <text x="70" y="309" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">4</text>
+    <text x="86" y="303" font-weight="700" fill="#065f46">Advanced Traffic Flighting &amp; Canary Deployments</text>
+    <text x="86" y="318" font-size="11" fill="#475569">Fine-grained traffic splitting via Istio, NGINX, or Envoy.</text>
+    <text x="86" y="332" font-size="11" fill="#475569">A/B testing, shadow traffic, and header-based routing.</text>
+
+    <!-- Point 5 -->
+    <circle cx="70" cy="360" r="8" fill="#059669"/>
+    <text x="70" y="364" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">5</text>
+    <text x="86" y="358" font-weight="700" fill="#065f46">Rich Observability Stack</text>
+    <text x="86" y="373" font-size="11" fill="#475569">Prometheus, Grafana, Azure Monitor, Container Insights.</text>
+    <text x="86" y="387" font-size="11" fill="#475569">Custom metrics, distributed tracing, and log aggregation.</text>
+
+    <!-- Point 6 -->
+    <circle cx="70" cy="415" r="8" fill="#059669"/>
+    <text x="70" y="419" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">6</text>
+    <text x="86" y="413" font-weight="700" fill="#065f46">Leverage Existing AKS Knowledge &amp; Platform</text>
+    <text x="86" y="428" font-size="11" fill="#475569">Teams already skilled in Kubernetes benefit from reusing</text>
+    <text x="86" y="442" font-size="11" fill="#475569">existing tooling: Helm, ArgoCD, Kustomize, GitOps.</text>
+
+    <!-- Point 7 -->
+    <circle cx="70" cy="470" r="8" fill="#059669"/>
+    <text x="70" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">7</text>
+    <text x="86" y="468" font-weight="700" fill="#065f46">Multi-Model &amp; High-Density Serving</text>
+    <text x="86" y="483" font-size="11" fill="#475569">Deploy many models on shared infrastructure with custom</text>
+    <text x="86" y="497" font-size="11" fill="#475569">autoscalers (KEDA, HPA) and bin-packing optimization.</text>
+
+    <!-- Point 8 -->
+    <circle cx="70" cy="525" r="8" fill="#059669"/>
+    <text x="70" y="529" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">8</text>
+    <text x="86" y="523" font-weight="700" fill="#065f46">Network Isolation &amp; Compliance</text>
+    <text x="86" y="538" font-size="11" fill="#475569">Private clusters, custom VNet CNI, network policies,</text>
+    <text x="86" y="552" font-size="11" fill="#475569">egress control. Full control over ingress with APIM + App GW.</text>
+
+    <!-- Point 9 -->
+    <circle cx="70" cy="580" r="8" fill="#059669"/>
+    <text x="70" y="584" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">9</text>
+    <text x="86" y="578" font-weight="700" fill="#065f46">Cost Optimization at Scale</text>
+    <text x="86" y="593" font-size="11" fill="#475569">Spot node pools, cluster autoscaler, node pool right-sizing.</text>
+    <text x="86" y="607" font-size="11" fill="#475569">Share cluster across teams to maximize GPU utilization.</text>
+  </g>
+
+
+  <!-- ═══════ RIGHT COLUMN: When NOT to Use AKS ═══════ -->
+  <g filter="url(#shadow)">
+    <rect x="610" y="80" width="550" height="580" rx="10" fill="#fff" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="610" y="80" width="550" height="36" rx="10" fill="url(#gradAml)"/>
+    <rect x="610" y="106" width="550" height="10" fill="url(#gradAml)"/>
+    <text x="885" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" letter-spacing="1">⚠️  WHEN TO USE AML MANAGED ENDPOINTS</text>
+  </g>
+
+  <!-- AML talking points -->
+  <g font-size="12" fill="#1e293b">
+    <!-- Point 1 -->
+    <circle cx="640" cy="140" r="8" fill="#7c3aed"/>
+    <text x="640" y="144" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">1</text>
+    <text x="656" y="138" font-weight="700" fill="#5b21b6">Small Number of Models / Simple Environments</text>
+    <text x="656" y="153" font-size="11" fill="#475569">If you have only a handful of models with straightforward</text>
+    <text x="656" y="167" font-size="11" fill="#475569">requirements, AML managed endpoints are simpler to set up.</text>
+
+    <!-- Point 2 -->
+    <circle cx="640" cy="195" r="8" fill="#7c3aed"/>
+    <text x="640" y="199" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">2</text>
+    <text x="656" y="193" font-weight="700" fill="#5b21b6">Avoid Kubernetes Learning Curve</text>
+    <text x="656" y="208" font-size="11" fill="#475569">AKS requires deep Kubernetes expertise — networking, RBAC,</text>
+    <text x="656" y="222" font-size="11" fill="#475569">pod scheduling, storage. AML abstracts all infrastructure.</text>
+
+    <!-- Point 3 -->
+    <circle cx="640" cy="250" r="8" fill="#7c3aed"/>
+    <text x="640" y="254" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">3</text>
+    <text x="656" y="248" font-weight="700" fill="#5b21b6">Built-in Blue/Green &amp; Traffic Splitting</text>
+    <text x="656" y="263" font-size="11" fill="#475569">AML managed online endpoints natively support blue/green</text>
+    <text x="656" y="277" font-size="11" fill="#475569">deployments and traffic flighting — no Istio or NGINX needed.</text>
+
+    <!-- Point 4 -->
+    <circle cx="640" cy="305" r="8" fill="#7c3aed"/>
+    <text x="640" y="309" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">4</text>
+    <text x="656" y="303" font-weight="700" fill="#5b21b6">Faster Time-to-Production</text>
+    <text x="656" y="318" font-size="11" fill="#475569">Deploy with a single CLI command or SDK call. No cluster</text>
+    <text x="656" y="332" font-size="11" fill="#475569">provisioning, no Helm charts, no ingress configuration.</text>
+
+    <!-- Point 5 -->
+    <circle cx="640" cy="360" r="8" fill="#7c3aed"/>
+    <text x="640" y="364" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">5</text>
+    <text x="656" y="358" font-weight="700" fill="#5b21b6">Integrated ML Lifecycle Management</text>
+    <text x="656" y="373" font-size="11" fill="#475569">Native model versioning, data drift monitoring, and</text>
+    <text x="656" y="387" font-size="11" fill="#475569">automatic rollback built into the AML platform.</text>
+
+    <!-- Point 6 -->
+    <circle cx="640" cy="415" r="8" fill="#7c3aed"/>
+    <text x="640" y="419" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">6</text>
+    <text x="656" y="413" font-weight="700" fill="#5b21b6">Lower Operational Overhead</text>
+    <text x="656" y="428" font-size="11" fill="#475569">No cluster upgrades, no node pool management, no</text>
+    <text x="656" y="442" font-size="11" fill="#475569">certificate rotation. Microsoft manages the infrastructure.</text>
+
+    <!-- Point 7 -->
+    <circle cx="640" cy="470" r="8" fill="#7c3aed"/>
+    <text x="640" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">7</text>
+    <text x="656" y="468" font-weight="700" fill="#5b21b6">Data Science Team Autonomy</text>
+    <text x="656" y="483" font-size="11" fill="#475569">Data scientists can deploy without needing DevOps/platform</text>
+    <text x="656" y="497" font-size="11" fill="#475569">team involvement. Self-service deployment via AML Studio.</text>
+
+    <!-- Point 8 -->
+    <circle cx="640" cy="525" r="8" fill="#7c3aed"/>
+    <text x="640" y="529" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">8</text>
+    <text x="656" y="523" font-weight="700" fill="#5b21b6">Cost-Effective for Small Scale</text>
+    <text x="656" y="538" font-size="11" fill="#475569">Pay only for compute when endpoints are active. No idle</text>
+    <text x="656" y="552" font-size="11" fill="#475569">cluster costs. Scale-to-zero for batch/dev scenarios.</text>
+  </g>
+
+  <!-- ═══════ BOTTOM: Key Takeaway ═══════ -->
+  <rect x="40" y="668" width="1120" height="24" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+  <text x="600" y="684" text-anchor="middle" font-size="11" fill="#334155" font-weight="600">💡 Rule of Thumb: Use AKS when you need full infrastructure control, GPU flexibility, and operate at scale. Use AML Managed Endpoints for simplicity and rapid iteration.</text>
+</svg>

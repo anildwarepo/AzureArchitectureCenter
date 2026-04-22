@@ -1,0 +1,367 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowLg" x="-2%" y="-4%" width="104%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+
+    <!-- Gradients -->
+    <linearGradient id="gradTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gradTrigger" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="gradData" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="gradCompute" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="gradOutput" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="gradMonitor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e74c9e"/><stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <!-- ML icon gradient -->
+    <linearGradient id="ml-grad" x1="1.1" y1="169" x2="11.12" y2="169" gradientTransform="translate(0 -160)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#50c7e8"/><stop offset="1" stop-color="#1989b2"/>
+    </linearGradient>
+    <!-- Storage gradient -->
+    <linearGradient id="stor-grad" x1="9" y1="15.83" x2="9" y2="5.79" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3b3b3"/><stop offset="0.26" stop-color="#c1c1c1"/><stop offset="1" stop-color="#e6e6e6"/>
+    </linearGradient>
+    <!-- Data Factory gradient -->
+    <linearGradient id="adf-grad" x1="0.5" y1="9.77" x2="9" y2="9.77" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#005ba1"/><stop offset="0.52" stop-color="#0078d4"/><stop offset="0.99" stop-color="#005ba1"/>
+    </linearGradient>
+    <!-- VM gradients for compute nodes -->
+    <linearGradient id="vm-grad1" x1="8.88" y1="12.21" x2="8.88" y2="0.21" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0078d4"/><stop offset="0.82" stop-color="#5ea0ef"/>
+    </linearGradient>
+    <linearGradient id="vm-grad2" x1="8.88" y1="16.84" x2="8.88" y2="12.21" gradientUnits="userSpaceOnUse">
+      <stop offset="0.15" stop-color="#ccc"/><stop offset="1" stop-color="#707070"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" rx="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="1400" height="56" rx="12" fill="url(#gradTitle)"/>
+  <rect x="0" y="28" width="1400" height="28" fill="url(#gradTitle)"/>
+  <text x="700" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">Azure ML — Batch Inference Architecture</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- LAYER 1: TRIGGERS &amp; SCHEDULING       -->
+  <!-- ═══════════════════════════════════════ -->
+  <g filter="url(#shadowLg)">
+    <rect x="40" y="80" width="1320" height="100" rx="10" fill="#fff" stroke="#8b5cf6" stroke-width="1.5" opacity="0.95"/>
+    <rect x="40" y="80" width="1320" height="28" rx="10" fill="url(#gradTrigger)"/>
+    <rect x="40" y="100" width="1320" height="8" fill="url(#gradTrigger)"/>
+    <text x="700" y="99" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">TRIGGERS &amp; SCHEDULING</text>
+  </g>
+
+  <!-- Schedule trigger -->
+  <rect x="80" y="120" width="150" height="45" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="155" y="140" text-anchor="middle" font-size="14">⏰</text>
+  <text x="155" y="157" text-anchor="middle" font-size="11" fill="#5b21b6" font-weight="600">Cron / Schedule</text>
+
+  <line x1="235" y1="142" x2="285" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Event trigger -->
+  <rect x="290" y="120" width="150" height="45" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="365" y="140" text-anchor="middle" font-size="14">📦</text>
+  <text x="365" y="157" text-anchor="middle" font-size="11" fill="#5b21b6" font-weight="600">New Data Event</text>
+
+  <line x1="445" y1="142" x2="495" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- AML Pipeline trigger -->
+  <rect x="500" y="120" width="180" height="45" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="590" y="140" text-anchor="middle" font-size="14">🔄</text>
+  <text x="590" y="157" text-anchor="middle" font-size="11" fill="#5b21b6" font-weight="600">AML Pipeline Trigger</text>
+
+  <line x1="685" y1="142" x2="735" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- GH Actions / CI/CD -->
+  <rect x="740" y="120" width="170" height="45" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="825" y="140" text-anchor="middle" font-size="14">🔄</text>
+  <text x="825" y="157" text-anchor="middle" font-size="11" fill="#5b21b6" font-weight="600">GitHub Actions CI/CD</text>
+
+  <line x1="915" y1="142" x2="965" y2="142" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Data Factory Orchestrator -->
+  <rect x="970" y="118" width="200" height="48" rx="8" fill="#f0f9ff" stroke="#0078d4" stroke-width="1.2"/>
+  <g transform="translate(985, 124) scale(1.8)">
+    <path d="M13.25,10.48V6.57a.14.14,0,0,0-.24-.1l-4,4L4.85,14.63V17.5H16.93a.56.56,0,0,0,.57-.57V6.57a.14.14,0,0,0-.24-.1Z" fill="#005ba1"/>
+    <path d="M4.75,3.58C2.4,3.58.5,2.89.5,2V7.67h0v9.26a.56.56,0,0,0,.57.57H9V2C9,2.89,7.1,3.58,4.75,3.58Z" fill="url(#adf-grad)"/>
+    <path d="M9,2c0,.85-1.9,1.54-4.25,1.54S.5,2.89.5,2,2.4.5,4.75.5,9,1.19,9,2" fill="#eaeaea"/>
+    <path d="M8,1.91c0,.55-1.46,1-3.26,1s-3.26-.43-3.26-1S3,.94,4.75.94,8,1.37,8,1.91" fill="#50e6ff"/>
+  </g>
+  <text x="1100" y="143" text-anchor="middle" font-size="12" font-weight="600" fill="#0369a1">Azure Data Factory</text>
+  <text x="1100" y="158" text-anchor="middle" font-size="10" fill="#0369a1">Orchestration (optional)</text>
+
+  <!-- Down arrows from triggers to pipeline -->
+  <line x1="700" y1="180" x2="700" y2="210" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- LAYER 2: INPUT DATA                    -->
+  <!-- ═══════════════════════════════════════ -->
+  <g filter="url(#shadowLg)">
+    <rect x="40" y="210" width="1320" height="100" rx="10" fill="#fff" stroke="#0284c7" stroke-width="1.5" opacity="0.95"/>
+    <rect x="40" y="210" width="1320" height="28" rx="10" fill="url(#gradData)"/>
+    <rect x="40" y="230" width="1320" height="8" fill="url(#gradData)"/>
+    <text x="700" y="229" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">INPUT DATA SOURCES</text>
+  </g>
+
+  <!-- Blob Storage (batch input) -->
+  <rect x="80" y="250" width="180" height="48" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <g transform="translate(90, 254) scale(1.8)">
+    <path d="M.5,5.79h17a0,0,0,0,1,0,0v9.48a.57.57,0,0,1-.57.57H1.07a.57.57,0,0,1-.57-.57V5.79A0,0,0,0,1,.5,5.79Z" fill="url(#stor-grad)"/>
+    <path d="M1.07,2.17H16.93a.57.57,0,0,1,.57.57V5.79a0,0,0,0,1,0,0H.5a0,0,0,0,1,0,0V2.73A.57.57,0,0,1,1.07,2.17Z" fill="#37c2b1"/>
+  </g>
+  <text x="195" y="275" text-anchor="middle" font-size="12" font-weight="600" fill="#0369a1">Azure Blob Storage</text>
+  <text x="195" y="290" text-anchor="middle" font-size="10" fill="#0369a1">Batch Input Data</text>
+
+  <line x1="265" y1="274" x2="330" y2="274" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ADLS Gen2 -->
+  <rect x="335" y="250" width="180" height="48" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <text x="425" y="272" text-anchor="middle" font-size="12" font-weight="600" fill="#0369a1">ADLS Gen2</text>
+  <text x="425" y="287" text-anchor="middle" font-size="10" fill="#0369a1">Data Lake (curated)</text>
+
+  <line x1="520" y1="274" x2="585" y2="274" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- SQL / Cosmos -->
+  <rect x="590" y="250" width="180" height="48" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <text x="680" y="272" text-anchor="middle" font-size="12" font-weight="600" fill="#0369a1">SQL / Cosmos DB</text>
+  <text x="680" y="287" text-anchor="middle" font-size="10" fill="#0369a1">Feature Store / Lookups</text>
+
+  <line x1="775" y1="274" x2="840" y2="274" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- AML Registered Datasets -->
+  <rect x="845" y="250" width="200" height="48" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <text x="945" y="272" text-anchor="middle" font-size="12" font-weight="600" fill="#0369a1">AML Registered Datasets</text>
+  <text x="945" y="287" text-anchor="middle" font-size="10" fill="#0369a1">Versioned data references</text>
+
+  <!-- Model Registry -->
+  <rect x="1090" y="250" width="200" height="48" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  <text x="1190" y="272" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">📋 Model Registry</text>
+  <text x="1190" y="287" text-anchor="middle" font-size="10" fill="#065f46">Trained model versions</text>
+
+  <!-- Down arrows -->
+  <line x1="700" y1="310" x2="700" y2="340" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- LAYER 3: AML BATCH PIPELINE            -->
+  <!-- ═══════════════════════════════════════ -->
+  <g filter="url(#shadowLg)">
+    <rect x="40" y="340" width="1320" height="215" rx="10" fill="#fff" stroke="#10b981" stroke-width="1.5" opacity="0.95"/>
+    <rect x="40" y="340" width="1320" height="28" rx="10" fill="url(#gradCompute)"/>
+    <rect x="40" y="360" width="1320" height="8" fill="url(#gradCompute)"/>
+    <text x="700" y="359" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">AML BATCH INFERENCE PIPELINE</text>
+  </g>
+
+  <!-- AML Workspace -->
+  <rect x="70" y="380" width="220" height="55" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  <g transform="translate(80, 385) scale(1.8)">
+    <path d="M15.8,17.5H2.2L1.1,13.4H16.9Z" fill="#198ab3"/>
+    <polygon points="6.9 0.5 6.9 6.9 1.1 13.4 2.2 17.5 11.1 6.9 11.1 0.5 6.9 0.5" fill="url(#ml-grad)"/>
+    <path d="M15.8,17.5,9.6,11.1l2.6-3,4.7,5.3Z" fill="#32bedd"/>
+  </g>
+  <text x="200" y="405" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">AML Workspace</text>
+  <text x="200" y="425" text-anchor="middle" font-size="10" fill="#065f46">Pipeline &amp; Batch Endpoint</text>
+
+  <line x1="295" y1="408" x2="350" y2="408" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Pipeline Steps box -->
+  <rect x="355" y="378" width="620" height="160" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <text x="665" y="395" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">AML Pipeline Steps</text>
+
+  <!-- Step 1: Data Prep -->
+  <rect x="375" y="405" width="130" height="55" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="440" y="422" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">Step 1</text>
+  <text x="440" y="436" text-anchor="middle" font-size="10" fill="#1e3a8a">Data Prep</text>
+  <text x="440" y="450" text-anchor="middle" font-size="10" fill="#64748b">Validation &amp; Split</text>
+
+  <line x1="510" y1="430" x2="540" y2="430" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: Model Load -->
+  <rect x="545" y="405" width="130" height="55" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="610" y="422" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">Step 2</text>
+  <text x="610" y="436" text-anchor="middle" font-size="10" fill="#1e3a8a">Model Load</text>
+  <text x="610" y="450" text-anchor="middle" font-size="10" fill="#64748b">From Registry</text>
+
+  <line x1="680" y1="430" x2="710" y2="430" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: Batch Score -->
+  <rect x="715" y="405" width="130" height="55" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="780" y="422" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">Step 3</text>
+  <text x="780" y="436" text-anchor="middle" font-size="10" fill="#1e3a8a">Batch Score</text>
+  <text x="780" y="450" text-anchor="middle" font-size="10" fill="#64748b">Parallel Run</text>
+
+  <line x1="850" y1="430" x2="880" y2="430" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: Post-Process -->
+  <rect x="885" y="405" width="130" height="55" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="950" y="422" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">Step 4</text>
+  <text x="950" y="436" text-anchor="middle" font-size="10" fill="#1e3a8a">Post-Process</text>
+  <text x="950" y="450" text-anchor="middle" font-size="10" fill="#64748b">Aggregate &amp; Validate</text>
+
+  <!-- Compute cluster (under pipeline steps) -->
+  <rect x="375" y="475" width="640" height="50" rx="6" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="695" y="493" text-anchor="middle" font-size="12" font-weight="600" fill="#3730a3">AML Compute Cluster (auto-scale 0→N)</text>
+  <!-- 6 compute nodes centered: cluster center=695, 6 nodes @ scale(1.3), icon=18*1.3=23.4, gap=10, total=6*23.4+5*10=190.4, start=695-95=600 -->
+  <g transform="translate(600, 498) scale(1.3)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#vm-grad1)"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#vm-grad2)"/>
+  </g>
+  <g transform="translate(634, 498) scale(1.3)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#vm-grad1)"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#vm-grad2)"/>
+  </g>
+  <g transform="translate(668, 498) scale(1.3)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#vm-grad1)"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#vm-grad2)"/>
+  </g>
+  <g transform="translate(702, 498) scale(1.3)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#vm-grad1)"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#vm-grad2)"/>
+  </g>
+  <g transform="translate(736, 498) scale(1.3)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#vm-grad1)"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#vm-grad2)"/>
+  </g>
+  <g transform="translate(770, 498) scale(1.3)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#vm-grad1)"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#vm-grad2)"/>
+  </g>
+  <text x="695" y="522" text-anchor="middle" font-size="10" fill="#3730a3">NC/ND GPU or CPU VMs — Scale-to-zero</text>
+
+  <!-- Batch Endpoint (right side) -->
+  <rect x="1020" y="380" width="300" height="160" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.2"/>
+  <text x="1170" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">AML Batch Endpoint</text>
+
+  <rect x="1040" y="410" width="260" height="35" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="1170" y="425" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">Deployment A (current)</text>
+  <text x="1170" y="438" text-anchor="middle" font-size="10" fill="#1e3a8a">Model v3 — 100% traffic</text>
+
+  <rect x="1040" y="455" width="260" height="35" rx="6" fill="#dcfce7" stroke="#4ade80" stroke-width="1"/>
+  <text x="1170" y="470" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">Deployment B (shadow)</text>
+  <text x="1170" y="483" text-anchor="middle" font-size="10" fill="#14532d">Model v4 — validation only</text>
+
+  <text x="1170" y="510" text-anchor="middle" font-size="10" fill="#065f46">REST API / SDK invocation</text>
+  <text x="1170" y="525" text-anchor="middle" font-size="10" fill="#065f46">mini_batch_size &amp; max_concurrency</text>
+
+  <!-- Down arrows -->
+  <line x1="700" y1="555" x2="700" y2="585" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- LAYER 4: OUTPUT &amp; RESULTS             -->
+  <!-- ═══════════════════════════════════════ -->
+  <g filter="url(#shadowLg)">
+    <rect x="40" y="585" width="1320" height="100" rx="10" fill="#fff" stroke="#fbbf24" stroke-width="1.5" opacity="0.95"/>
+    <rect x="40" y="585" width="1320" height="28" rx="10" fill="url(#gradOutput)"/>
+    <rect x="40" y="605" width="1320" height="8" fill="url(#gradOutput)"/>
+    <text x="700" y="604" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">OUTPUT &amp; RESULTS</text>
+  </g>
+
+  <!-- Predictions blob -->
+  <rect x="80" y="625" width="200" height="48" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+  <g transform="translate(90, 629) scale(1.6)">
+    <path d="M.5,5.79h17a0,0,0,0,1,0,0v9.48a.57.57,0,0,1-.57.57H1.07a.57.57,0,0,1-.57-.57V5.79A0,0,0,0,1,.5,5.79Z" fill="url(#stor-grad)"/>
+    <path d="M1.07,2.17H16.93a.57.57,0,0,1,.57.57V5.79a0,0,0,0,1,0,0H.5a0,0,0,0,1,0,0V2.73A.57.57,0,0,1,1.07,2.17Z" fill="#37c2b1"/>
+  </g>
+  <text x="210" y="650" text-anchor="middle" font-size="12" font-weight="600" fill="#78350f">Predictions Output</text>
+  <text x="210" y="665" text-anchor="middle" font-size="10" fill="#78350f">Blob Storage (Parquet/CSV)</text>
+
+  <!-- SQL DB sink -->
+  <rect x="340" y="625" width="200" height="48" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+  <text x="440" y="650" text-anchor="middle" font-size="12" font-weight="600" fill="#78350f">SQL Database</text>
+  <text x="440" y="665" text-anchor="middle" font-size="10" fill="#78350f">Structured results for BI</text>
+
+  <!-- Dashboard / Power BI -->
+  <rect x="600" y="625" width="200" height="48" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+  <text x="700" y="645" text-anchor="middle" font-size="14">📊</text>
+  <text x="700" y="665" text-anchor="middle" font-size="11" fill="#78350f" font-weight="600">Power BI / Dashboards</text>
+
+  <!-- Downstream API -->
+  <rect x="860" y="625" width="200" height="48" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+  <text x="960" y="645" text-anchor="middle" font-size="14">🔗</text>
+  <text x="960" y="665" text-anchor="middle" font-size="11" fill="#78350f" font-weight="600">Downstream Systems</text>
+
+  <!-- Event notification -->
+  <rect x="1120" y="625" width="200" height="48" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+  <text x="1220" y="645" text-anchor="middle" font-size="14">📧</text>
+  <text x="1220" y="665" text-anchor="middle" font-size="11" fill="#78350f" font-weight="600">Alerts / Notifications</text>
+
+  <!-- Down arrows -->
+  <line x1="700" y1="685" x2="700" y2="710" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- LAYER 5: MONITORING                    -->
+  <!-- ═══════════════════════════════════════ -->
+  <g filter="url(#shadowLg)">
+    <rect x="40" y="710" width="1320" height="90" rx="10" fill="#fff" stroke="#ec4899" stroke-width="1.5" opacity="0.95"/>
+    <rect x="40" y="710" width="1320" height="28" rx="10" fill="url(#gradMonitor)"/>
+    <rect x="40" y="730" width="1320" height="8" fill="url(#gradMonitor)"/>
+    <text x="700" y="729" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">MONITORING &amp; OBSERVABILITY</text>
+  </g>
+
+  <rect x="80" y="750" width="200" height="40" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="180" y="775" text-anchor="middle" font-size="11" fill="#9d174d" font-weight="600">AML Run Metrics</text>
+
+  <rect x="330" y="750" width="200" height="40" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="430" y="775" text-anchor="middle" font-size="11" fill="#9d174d" font-weight="600">Data Drift Detection</text>
+
+  <rect x="580" y="750" width="200" height="40" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="680" y="775" text-anchor="middle" font-size="11" fill="#9d174d" font-weight="600">Application Insights</text>
+
+  <rect x="830" y="750" width="200" height="40" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="930" y="775" text-anchor="middle" font-size="11" fill="#9d174d" font-weight="600">Azure Monitor Logs</text>
+
+  <rect x="1080" y="750" width="200" height="40" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="1180" y="775" text-anchor="middle" font-size="11" fill="#9d174d" font-weight="600">Cost &amp; Compute Tracking</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- LEGEND                                 -->
+  <!-- ═══════════════════════════════════════ -->
+  <g transform="translate(40, 830)" font-size="10">
+    <text x="0" y="12" font-weight="700" fill="#475569" font-size="10">LEGEND:</text>
+
+    <rect x="70" y="2" width="14" height="14" rx="3" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="90" y="13" fill="#475569">Triggers</text>
+
+    <rect x="150" y="2" width="14" height="14" rx="3" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+    <text x="170" y="13" fill="#475569">Data Sources</text>
+
+    <rect x="260" y="2" width="14" height="14" rx="3" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="280" y="13" fill="#475569">AML Pipeline</text>
+
+    <rect x="370" y="2" width="14" height="14" rx="3" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+    <text x="390" y="13" fill="#475569">Pipeline Steps</text>
+
+    <rect x="480" y="2" width="14" height="14" rx="3" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+    <text x="500" y="13" fill="#475569">Compute</text>
+
+    <rect x="570" y="2" width="14" height="14" rx="3" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+    <text x="590" y="13" fill="#475569">Output</text>
+
+    <rect x="650" y="2" width="14" height="14" rx="3" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+    <text x="670" y="13" fill="#475569">Monitoring</text>
+
+    <line x1="750" y1="10" x2="790" y2="10" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="800" y="13" fill="#475569">Data Flow</text>
+  </g>
+
+  <!-- Key notes -->
+  <text x="40" y="870" font-size="10" fill="#64748b">Notes: Batch endpoints support multiple deployments with traffic splitting for A/B validation. Compute auto-scales 0→N and back to 0 after job completion (pay-per-use).</text>
+  <text x="40" y="885" font-size="10" fill="#64748b">ParallelRunStep processes data in mini-batches across nodes. Output goes to Blob/SQL/downstream systems. Data drift monitoring triggers retraining alerts.</text>
+</svg>

@@ -1,0 +1,869 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1380" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadowLg" x="-2%" y="-4%" width="104%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.12"/>
+    </filter>
+
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0078d4"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#059669"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowDeploy" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4f46e5"/>
+    </marker>
+
+    <!-- Layer gradients -->
+    <linearGradient id="gradPipeline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="gradDev" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="gradStage" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="gradProd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="gradIngress" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+
+    <!-- ML icon gradients -->
+    <linearGradient id="ml-grad" x1="1.1" y1="169" x2="11.12" y2="169" gradientTransform="translate(0 -160)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#50c7e8"/><stop offset="1" stop-color="#1989b2"/>
+    </linearGradient>
+    <linearGradient id="ml2-grad" x1="1.1" y1="169" x2="11.12" y2="169" gradientTransform="translate(0 -160)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#50c7e8"/><stop offset="1" stop-color="#1989b2"/>
+    </linearGradient>
+    <linearGradient id="ml3-grad" x1="1.1" y1="169" x2="11.12" y2="169" gradientTransform="translate(0 -160)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#50c7e8"/><stop offset="1" stop-color="#1989b2"/>
+    </linearGradient>
+
+    <!-- ACR icon gradients per subscription -->
+    <linearGradient id="acr1-grad1" x1="8.637" y1="-1.991" x2="8.637" y2="16.739" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5ea0ef"/><stop offset="1" stop-color="#0078d4"/>
+    </linearGradient>
+    <linearGradient id="acr1-grad2" x1="12.96" y1="8.561" x2="12.96" y2="6.141" gradientTransform="matrix(1, 0, 0, -1, 0, 20)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#333132"/><stop offset="1" stop-color="#5b5a5c"/>
+    </linearGradient>
+    <linearGradient id="acr2-grad1" x1="8.637" y1="-1.991" x2="8.637" y2="16.739" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5ea0ef"/><stop offset="1" stop-color="#0078d4"/>
+    </linearGradient>
+    <linearGradient id="acr2-grad2" x1="12.96" y1="8.561" x2="12.96" y2="6.141" gradientTransform="matrix(1, 0, 0, -1, 0, 20)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#333132"/><stop offset="1" stop-color="#5b5a5c"/>
+    </linearGradient>
+    <linearGradient id="acr3-grad1" x1="8.637" y1="-1.991" x2="8.637" y2="16.739" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5ea0ef"/><stop offset="1" stop-color="#0078d4"/>
+    </linearGradient>
+    <linearGradient id="acr3-grad2" x1="12.96" y1="8.561" x2="12.96" y2="6.141" gradientTransform="matrix(1, 0, 0, -1, 0, 20)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#333132"/><stop offset="1" stop-color="#5b5a5c"/>
+    </linearGradient>
+
+    <!-- AKS icon gradients (dev training) -->
+    <linearGradient id="aks1-grad1" x1="2.94" y1="3.74" x2="8.67" y2="3.74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks1-grad2" x1="9.13" y1="3.79" x2="14.85" y2="3.79" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks1-grad3" x1="0.01" y1="9.12" x2="5.73" y2="9.12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks1-grad4" x1="6.18" y1="9.08" x2="11.9" y2="9.08" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks1-grad5" x1="12.35" y1="9.13" x2="18.08" y2="9.13" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks1-grad6" x1="2.87" y1="14.56" x2="8.6" y2="14.56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks1-grad7" x1="9.05" y1="14.6" x2="14.78" y2="14.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <!-- AKS dev inference -->
+    <linearGradient id="aks2-grad1" x1="2.94" y1="3.74" x2="8.67" y2="3.74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks2-grad2" x1="9.13" y1="3.79" x2="14.85" y2="3.79" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks2-grad3" x1="0.01" y1="9.12" x2="5.73" y2="9.12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks2-grad4" x1="6.18" y1="9.08" x2="11.9" y2="9.08" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks2-grad5" x1="12.35" y1="9.13" x2="18.08" y2="9.13" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks2-grad6" x1="2.87" y1="14.56" x2="8.6" y2="14.56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks2-grad7" x1="9.05" y1="14.6" x2="14.78" y2="14.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <!-- AKS stage -->
+    <linearGradient id="aks3-grad1" x1="2.94" y1="3.74" x2="8.67" y2="3.74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks3-grad2" x1="9.13" y1="3.79" x2="14.85" y2="3.79" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks3-grad3" x1="0.01" y1="9.12" x2="5.73" y2="9.12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks3-grad4" x1="6.18" y1="9.08" x2="11.9" y2="9.08" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks3-grad5" x1="12.35" y1="9.13" x2="18.08" y2="9.13" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks3-grad6" x1="2.87" y1="14.56" x2="8.6" y2="14.56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks3-grad7" x1="9.05" y1="14.6" x2="14.78" y2="14.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <!-- AKS prod -->
+    <linearGradient id="aks4-grad1" x1="2.94" y1="3.74" x2="8.67" y2="3.74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks4-grad2" x1="9.13" y1="3.79" x2="14.85" y2="3.79" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks4-grad3" x1="0.01" y1="9.12" x2="5.73" y2="9.12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks4-grad4" x1="6.18" y1="9.08" x2="11.9" y2="9.08" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks4-grad5" x1="12.35" y1="9.13" x2="18.08" y2="9.13" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks4-grad6" x1="2.87" y1="14.56" x2="8.6" y2="14.56" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+    <linearGradient id="aks4-grad7" x1="9.05" y1="14.6" x2="14.78" y2="14.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b77af4"/><stop offset="1" stop-color="#773adc"/></linearGradient>
+
+    <!-- VM / Runner gradients -->
+    <linearGradient id="runner-grad1" x1="8.88" y1="12.21" x2="8.88" y2="0.21" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0078d4"/><stop offset="0.82" stop-color="#5ea0ef"/>
+    </linearGradient>
+    <linearGradient id="runner-grad2" x1="8.88" y1="16.84" x2="8.88" y2="12.21" gradientUnits="userSpaceOnUse">
+      <stop offset="0.15" stop-color="#ccc"/><stop offset="1" stop-color="#707070"/>
+    </linearGradient>
+
+    <!-- Storage -->
+    <linearGradient id="stor-grad" x1="9" y1="15.83" x2="9" y2="5.79" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b3b3b3"/><stop offset="0.26" stop-color="#c1c1c1"/><stop offset="1" stop-color="#e6e6e6"/>
+    </linearGradient>
+
+    <!-- VNet -->
+    <linearGradient id="vn-grad1" x1="9.88" y1="8.59" x2="11.52" y2="10.23" gradientTransform="translate(2.03 -0.4) rotate(-0.08)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+    <linearGradient id="vn-grad2" x1="6.18" y1="8.59" x2="7.81" y2="10.23" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+    <linearGradient id="vn-grad3" x1="2.48" y1="8.59" x2="4.11" y2="10.23" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#86d633"/><stop offset="1" stop-color="#5e9624"/>
+    </linearGradient>
+
+    <!-- Front Door -->
+    <linearGradient id="fd-grad" x1="9" y1="13.83" x2="9" y2="1.07" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0078d4"/><stop offset="0.82" stop-color="#5ea0ef"/>
+    </linearGradient>
+
+    <!-- DNS -->
+    <radialGradient id="dns-grad" cx="-6811.4" cy="6729.69" r="17" gradientTransform="matrix(0.5, 0, 0, -0.5, 3414.91, 3374.05)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.18" stop-color="#5ea0ef"/><stop offset="1" stop-color="#0078d4"/>
+    </radialGradient>
+
+    <!-- Subscription icons -->
+    <radialGradient id="sub-grad" cx="-36.63" cy="17.12" r="11.18" gradientTransform="translate(41.88 -7.4) scale(0.94)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.27" stop-color="#ffd70f"/><stop offset="1" stop-color="#fea11b"/>
+    </radialGradient>
+    <radialGradient id="sub2-grad" cx="-36.63" cy="17.12" r="11.18" gradientTransform="translate(41.88 -7.4) scale(0.94)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.27" stop-color="#ffd70f"/><stop offset="1" stop-color="#fea11b"/>
+    </radialGradient>
+    <radialGradient id="sub3-grad" cx="-36.63" cy="17.12" r="11.18" gradientTransform="translate(41.88 -7.4) scale(0.94)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.27" stop-color="#ffd70f"/><stop offset="1" stop-color="#fea11b"/>
+    </radialGradient>
+
+    <!-- APIM icon gradients -->
+    <linearGradient id="apim-grad1" x1="9" y1="16.82" x2="9" y2="1.18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#198ab3"/><stop offset="0.09" stop-color="#1f9dc4"/><stop offset="0.24" stop-color="#28b5d9"/><stop offset="0.4" stop-color="#2dc6e9"/><stop offset="0.57" stop-color="#31d1f2"/><stop offset="0.78" stop-color="#32d4f5"/>
+    </linearGradient>
+    <linearGradient id="apim-grad2" x1="8.36" y1="11.35" x2="8.36" y2="14.46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c69aeb"/><stop offset="1" stop-color="#6f4bb2"/>
+    </linearGradient>
+
+    <!-- App Gateway icon gradients -->
+    <linearGradient id="agw-grad1" x1="9" y1="19.25" x2="9" y2="-0.46" gradientTransform="translate(9 -3.73) rotate(45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5e9624"/><stop offset="0.55" stop-color="#6dad2a"/><stop offset="1" stop-color="#76bc2d"/>
+    </linearGradient>
+
+    <!-- Downward arrow marker -->
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="3.5" refY="5" orient="auto">
+      <polygon points="0 0, 7 5, 0 10" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowDownRed" markerWidth="10" markerHeight="7" refX="3.5" refY="5" orient="auto">
+      <polygon points="0 0, 7 5, 0 10" fill="#dc2626"/>
+    </marker>
+
+    <!-- Private Endpoints -->
+    <linearGradient id="pe-grad1" x1="9.084" y1="790.967" x2="9.084" y2="787.492" gradientTransform="matrix(1, 0, 0, -1, 0, 791.516)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#50e6ff"/><stop offset="1" stop-color="#32bedd"/>
+    </linearGradient>
+    <linearGradient id="pe-grad2" x1="9.065" y1="13.843" x2="9.065" y2="10.368" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5e9624"/><stop offset="1" stop-color="#86d633"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1500" height="1380" rx="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="750" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Azure Machine Learning — Managed Endpoints with Blue/Green Deployments</text>
+  <text x="750" y="58" text-anchor="middle" font-size="12" fill="#64748b">Multi-Environment (Dev / Stage / Prod) with AKS Clusters, Private Networking &amp; CI/CD</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ROW 1: PUBLIC INGRESS — above PROD, pointing down            -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <g filter="url(#shadowLg)">
+    <rect x="980" y="75" width="460" height="100" rx="10" fill="#fff" stroke="#8b5cf6" stroke-width="1.5" opacity="0.95"/>
+    <rect x="980" y="75" width="460" height="28" rx="10" fill="url(#gradIngress)"/>
+    <rect x="980" y="93" width="460" height="10" fill="url(#gradIngress)"/>
+    <text x="1210" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">PUBLIC INGRESS</text>
+  </g>
+
+  <!-- End Users -->
+  <text x="1040" y="130" text-anchor="middle" font-size="24">👤</text>
+  <text x="1040" y="148" text-anchor="middle" font-size="10" fill="#5b21b6" font-weight="600">End Users</text>
+
+  <line x1="1065" y1="130" x2="1100" y2="130" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="1083" y="123" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">HTTPS</text>
+
+  <!-- DNS Zone -->
+  <g transform="translate(1105, 115) scale(1.8)">
+    <path d="M14.21,15.72A8.5,8.5,0,0,1,3.79,2.28l.09-.06a8.5,8.5,0,0,1,10.33,13.5" fill="url(#dns-grad)"/>
+    <path d="M3.69,7a7.92,7.92,0,0,1,1.16-.08,2.44,2.44,0,0,1,1.71.52A2,2,0,0,1,7.15,8.9a2.21,2.21,0,0,1-.61,1.64,2.6,2.6,0,0,1-1.86.61,9.17,9.17,0,0,1-1-.05Zm.55,3.73a4,4,0,0,0,.55,0A1.62,1.62,0,0,0,6.58,8.92,1.5,1.5,0,0,0,4.87,7.3a3.17,3.17,0,0,0-.63,0Z" fill="#fff"/>
+    <path d="M7.86,11.11V6.9h.59L9.8,9a12.18,12.18,0,0,1,.76,1.37h0c-.05-.56-.06-1.07-.06-1.73V6.9H11v4.21h-.55L9.13,9c-.29-.47-.57-1-.79-1.4h0c0,.53,0,1,0,1.74v1.8Z" fill="#fff"/>
+    <path d="M11.89,10.45a2,2,0,0,0,1,.27c.56,0,.88-.29.88-.72s-.22-.62-.79-.83-1.12-.6-1.12-1.2a1.22,1.22,0,0,1,1.37-1.14,2,2,0,0,1,.93.2L14,7.48a1.63,1.63,0,0,0-.8-.2c-.58,0-.8.34-.8.63s.26.59.84.81,1.08.62,1.08,1.24-.48,1.21-1.48,1.21a2.16,2.16,0,0,1-1.07-.27Z" fill="#fff"/>
+  </g>
+  <text x="1125" y="155" text-anchor="middle" font-size="10" fill="#5b21b6" font-weight="600">Azure DNS</text>
+
+  <line x1="1148" y1="130" x2="1190" y2="130" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Front Door -->
+  <g transform="translate(1195, 115) scale(1.8)">
+    <path d="M18,9.83A4,4,0,0,0,14.49,6,5.1,5.1,0,0,0,9.24,1.07a5.23,5.23,0,0,0-5,3.41A4.83,4.83,0,0,0,0,9.12a4.9,4.9,0,0,0,5.07,4.71l.44,0h8.21a.78.78,0,0,0,.22,0A4.09,4.09,0,0,0,18,9.83Z" fill="url(#fd-grad)"/>
+    <path d="M6.63,6.82h5.06v7H6.63Z" fill="#f2f2f2"/>
+    <path d="M12.61,6.37l-3.49-2a.25.25,0,0,0-.31.15s0,.06,0,.08V16.68a.25.25,0,0,0,.24.25h.08l3.49-2.06a.25.25,0,0,0,.17-.23v-8A.26.26,0,0,0,12.61,6.37Z" fill="#50e6ff"/>
+  </g>
+  <text x="1215" y="155" text-anchor="middle" font-size="10" fill="#5b21b6" font-weight="600">Front Door</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ROW 2: CI/CD PIPELINE — GIT BRANCHING + ACR + AKS DEPLOY   -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <g filter="url(#shadowLg)">
+    <rect x="60" y="180" width="1100" height="90" rx="10" fill="#fff" stroke="#818cf8" stroke-width="1.5" opacity="0.95"/>
+    <rect x="60" y="180" width="1100" height="28" rx="10" fill="url(#gradPipeline)"/>
+    <rect x="60" y="198" width="1100" height="10" fill="url(#gradPipeline)"/>
+    <text x="610" y="199" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">CI/CD PIPELINE — GITHUB ACTIONS &amp; GIT BRANCHING</text>
+  </g>
+
+  <!-- Data Scientist -->
+  <text x="85" y="230" text-anchor="middle" font-size="20">👩‍🔬</text>
+  <text x="85" y="246" text-anchor="middle" font-size="10" fill="#3730a3" font-weight="600">Data Scientist</text>
+  <text x="85" y="258" text-anchor="middle" font-size="10" fill="#64748b">ML + Inference</text>
+
+  <!-- Arrow: push code -->
+  <line x1="112" y1="237" x2="142" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Feature Branch -->
+  <rect x="146" y="222" width="72" height="30" rx="5" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="182" y="236" text-anchor="middle" font-size="10" font-weight="700" fill="#3730a3">feature/*</text>
+  <text x="182" y="248" text-anchor="middle" font-size="10" fill="#64748b">branch</text>
+
+  <!-- Arrow -->
+  <line x1="221" y1="237" x2="247" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- GH Actions (build for Dev) -->
+  <rect x="250" y="222" width="62" height="30" rx="5" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="281" y="234" text-anchor="middle" font-size="14">🔄</text>
+  <text x="281" y="248" text-anchor="middle" font-size="10" fill="#3730a3" font-weight="600">Build</text>
+
+  <!-- Arrow: push to ACR -->
+  <line x1="315" y1="237" x2="340" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="328" y="230" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">push</text>
+
+  <!-- ACR (Dev) -->
+  <rect x="343" y="224" width="40" height="26" rx="5" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <text x="363" y="242" text-anchor="middle" font-size="10" fill="#0369a1" font-weight="600">ACR</text>
+
+  <!-- Arrow: deploy to AKS + tests -->
+  <line x1="386" y1="237" x2="412" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="399" y="230" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">deploy</text>
+
+  <!-- AKS (Dev) label -->
+  <rect x="415" y="224" width="40" height="26" rx="5" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="435" y="242" text-anchor="middle" font-size="10" fill="#1e3a8a" font-weight="600">AKS</text>
+
+  <!-- Arrow: tests pass -->
+  <line x1="458" y1="237" x2="488" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="473" y="230" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">pass</text>
+
+  <!-- Integration Branch -->
+  <rect x="491" y="222" width="80" height="30" rx="5" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+  <text x="531" y="236" text-anchor="middle" font-size="10" font-weight="700" fill="#78350f">integration</text>
+  <text x="531" y="248" text-anchor="middle" font-size="10" fill="#64748b">PR</text>
+
+  <!-- Arrow -->
+  <line x1="574" y1="237" x2="598" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- GH Actions (build for Stage) -->
+  <rect x="601" y="222" width="62" height="30" rx="5" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="632" y="234" text-anchor="middle" font-size="14">🔄</text>
+  <text x="632" y="248" text-anchor="middle" font-size="10" fill="#3730a3" font-weight="600">Build</text>
+
+  <!-- Arrow: push to ACR -->
+  <line x1="666" y1="237" x2="690" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="678" y="230" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">push</text>
+
+  <!-- ACR (Stage) -->
+  <rect x="693" y="224" width="40" height="26" rx="5" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <text x="713" y="242" text-anchor="middle" font-size="10" fill="#0369a1" font-weight="600">ACR</text>
+
+  <!-- Arrow: tests pass -->
+  <line x1="736" y1="237" x2="760" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="748" y="230" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">pass</text>
+
+  <!-- Main Branch -->
+  <rect x="763" y="222" width="55" height="30" rx="5" fill="#fef2f2" stroke="#f87171" stroke-width="1"/>
+  <text x="791" y="236" text-anchor="middle" font-size="10" font-weight="700" fill="#991b1b">main</text>
+  <text x="791" y="248" text-anchor="middle" font-size="10" fill="#64748b">PR</text>
+
+  <!-- Arrow -->
+  <line x1="821" y1="237" x2="845" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- GH Actions (build for Prod) -->
+  <rect x="848" y="222" width="62" height="30" rx="5" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="879" y="234" text-anchor="middle" font-size="14">🔄</text>
+  <text x="879" y="248" text-anchor="middle" font-size="10" fill="#3730a3" font-weight="600">Build</text>
+
+  <!-- Arrow: push to ACR (Prod) -->
+  <line x1="913" y1="237" x2="938" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="926" y="230" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">push</text>
+
+  <!-- ACR (Prod) -->
+  <rect x="941" y="224" width="40" height="26" rx="5" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <text x="961" y="242" text-anchor="middle" font-size="10" fill="#0369a1" font-weight="600">ACR</text>
+
+  <!-- Arrow: deploy to AKS (Prod) -->
+  <line x1="984" y1="237" x2="1010" y2="237" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="997" y="230" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">deploy</text>
+
+  <!-- AKS (Prod) label -->
+  <rect x="1013" y="224" width="40" height="26" rx="5" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="1033" y="242" text-anchor="middle" font-size="10" fill="#1e3a8a" font-weight="600">AKS</text>
+
+  <!-- Downward arrow from ingress into Prod VNet (drawn after CI/CD so it renders on top) -->
+  <line x1="1210" y1="175" x2="1210" y2="305" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="1225" y="230" text-anchor="start" font-size="10" fill="#64748b" font-style="italic">to prod</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ROW 3: ENVIRONMENT COLUMNS                                   -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- ============ DEV SUBSCRIPTION ============ -->
+  <g filter="url(#shadowLg)">
+    <rect x="60" y="310" width="440" height="800" rx="10" fill="#fff" stroke="#10b981" stroke-width="2" opacity="0.95"/>
+    <rect x="60" y="310" width="440" height="30" rx="10" fill="url(#gradDev)"/>
+    <rect x="60" y="330" width="440" height="10" fill="url(#gradDev)"/>
+    <text x="280" y="330" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">DEV SUBSCRIPTION</text>
+  </g>
+  <g transform="translate(75, 316) scale(1.2)">
+    <path d="M13.56,7.19a2.07,2.07,0,0,0,0-2.93h0L10,.69a2.06,2.06,0,0,0-2.92,0h0L3.52,4.26a2.09,2.09,0,0,0,0,2.93l3,3a.61.61,0,0,1,.17.41v5.52a.7.7,0,0,0,.2.5l1.35,1.35a.45.45,0,0,0,.66,0l1.31-1.31h0l.77-.77a.26.26,0,0,0,0-.38l-.55-.56a.29.29,0,0,1,0-.42l.55-.56a.26.26,0,0,0,0-.38L10.4,13a.28.28,0,0,1,0-.41L11,12a.26.26,0,0,0,0-.38l-.77-.78v-.28Zm-5-5.64A1.18,1.18,0,1,1,7.37,2.73,1.17,1.17,0,0,1,8.54,1.55Z" fill="url(#sub-grad)"/>
+  </g>
+
+  <!-- AML Workspace row with ACR -->
+  <rect x="80" y="355" width="250" height="50" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+  <g transform="translate(88, 360) scale(1.6)">
+    <path d="M15.8,17.5H2.2L1.1,13.4H16.9Z" fill="#198ab3"/>
+    <polygon points="6.9 0.5 6.9 6.9 1.1 13.4 2.2 17.5 11.1 6.9 11.1 0.5 6.9 0.5" fill="url(#ml-grad)"/>
+    <path d="M15.8,17.5,9.6,11.1l2.6-3,4.7,5.3Z" fill="#32bedd"/>
+  </g>
+  <text x="230" y="380" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">AML Workspace (Dev)</text>
+  <text x="230" y="397" text-anchor="middle" font-size="10" fill="#065f46">Project-level Resources</text>
+
+  <!-- Container Registry (Dev) inside workspace -->
+  <rect x="345" y="355" width="135" height="50" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <g transform="translate(360, 359) scale(1.5)">
+    <path d="M7.43,8.178l2.589-1.573,7.255,2.731A3.664,3.664,0,0,0,16.23,7.49l-.01-.05A4.194,4.194,0,0,0,14,6.32a4.91,4.91,0,0,0-5.1-4.7A5.071,5.071,0,0,0,4.06,4.91,4.621,4.621,0,0,0,0,9.39a4.73,4.73,0,0,0,4.89,4.54H7.43Z" fill="url(#acr1-grad1)"/>
+    <polygon points="10.07 7.159 10.08 11.439 17.99 13.119 17.99 10.139 10.07 7.159" fill="#767676"/>
+    <polyline points="10.07 7.159 7.93 8.459 7.93 12.439 10.08 11.439" fill="#999"/>
+    <polygon points="17.99 13.119 15.83 13.859 7.93 12.439 10.08 11.439 17.99 13.119" fill="url(#acr1-grad2)"/>
+    <polygon points="17.99 16.169 10.04 17.679 10.08 12.089 17.99 13.559 17.99 16.169" fill="#767676"/>
+    <path d="M7.93,16.4v-3.26l2.16-1v5.6Z" fill="#999"/>
+  </g>
+  <text x="413" y="400" text-anchor="middle" font-size="10" fill="#0369a1" font-weight="600">Container Registry</text>
+
+  <!-- Model Registry (Dev) -->
+  <rect x="80" y="415" width="400" height="28" rx="6" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="280" y="434" text-anchor="middle" font-size="11" font-weight="600" fill="#065f46">📋 Model Registry (Dev)</text>
+
+  <!-- VNet (Dev) -->
+  <rect x="85" y="453" width="395" height="460" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <g transform="translate(92, 457) scale(1.2)">
+    <circle cx="12.74" cy="8.99" r="1.16" fill="url(#vn-grad1)"/>
+    <circle cx="9.04" cy="9" r="1.16" fill="url(#vn-grad2)"/>
+    <circle cx="5.34" cy="9" r="1.16" fill="url(#vn-grad3)"/>
+    <path d="M2.61,7.28h.94a.3.3,0,0,1,.3.3v6.94a.6.6,0,0,1-.6.6H2.31a0,0,0,0,1,0,0V7.58a.3.3,0,0,1,.3-.3Z" transform="translate(13.18 16.93) rotate(134.92)" fill="#50e6ff"/>
+    <path d="M2.56,2.91H3.5a.3.3,0,0,1,.3.3v7.43a0,0,0,0,1,0,0H2.86a.6.6,0,0,1-.6-.6V3.21a.3.3,0,0,1,.3-.3Z" transform="translate(5.66 -0.16) rotate(44.92)" fill="#1490df"/>
+    <path d="M14.15,7.28h.94a.6.6,0,0,1,.6.6v6.94a.3.3,0,0,1-.3.3h-.94a.3.3,0,0,1-.3-.3V7.28a0,0,0,0,1,0,0Z" transform="translate(12.32 -7.28) rotate(45.08)" fill="#50e6ff"/>
+    <path d="M14.81,2.91h.94a0,0,0,0,1,0,0v7.43a.3.3,0,0,1-.3.3H14.5a.3.3,0,0,1-.3-.3V3.51a.6.6,0,0,1,.6-.6Z" transform="translate(30.36 0.99) rotate(135.08)" fill="#1490df"/>
+  </g>
+  <text x="120" y="471" text-anchor="start" font-size="11" font-weight="600" fill="#065f46">VNet (Dev)</text>
+
+  <!-- Training Cluster on AKS (Dev only) - 3 compute nodes -->
+  <rect x="100" y="483" width="365" height="75" rx="8" fill="#eef2ff" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="280" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="#3730a3">Training Cluster (AKS) — 3 Nodes</text>
+  <!-- Node 1 -->
+  <g transform="translate(199, 507) scale(1.8)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <!-- Node 2 -->
+  <g transform="translate(248, 507) scale(1.8)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <!-- Node 3 -->
+  <g transform="translate(297, 507) scale(1.8)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <text x="280" y="549" text-anchor="middle" font-size="10" fill="#3730a3">NC/ND-series GPU — Model Training</text>
+
+  <!-- Training Data -->
+  <rect x="100" y="565" width="170" height="35" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <g transform="translate(108, 568) scale(1.2)">
+    <path d="M.5,5.79h17a0,0,0,0,1,0,0v9.48a.57.57,0,0,1-.57.57H1.07a.57.57,0,0,1-.57-.57V5.79A0,0,0,0,1,.5,5.79Z" fill="url(#stor-grad)"/>
+    <path d="M1.07,2.17H16.93a.57.57,0,0,1,.57.57V5.79a0,0,0,0,1,0,0H.5a0,0,0,0,1,0,0V2.73A.57.57,0,0,1,1.07,2.17Z" fill="#37c2b1"/>
+  </g>
+  <text x="210" y="588" text-anchor="middle" font-size="10" fill="#0369a1" font-weight="600">Training Data (Blob)</text>
+
+  <rect x="285" y="565" width="170" height="35" rx="6" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <text x="370" y="583" text-anchor="middle" font-size="10" fill="#0369a1" font-weight="600">Pre-trained Models</text>
+  <text x="370" y="595" text-anchor="middle" font-size="10" fill="#0369a1">(Blob Storage)</text>
+
+  <!-- Inference Cluster on AKS (Dev) - 2 compute nodes -->
+  <rect x="100" y="615" width="365" height="75" rx="8" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="280" y="632" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">Inference Cluster (AKS) — 2 Nodes</text>
+  <!-- Node 1 -->
+  <g transform="translate(234, 640) scale(1.8)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <!-- Node 2 -->
+  <g transform="translate(283, 640) scale(1.8)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <text x="280" y="682" text-anchor="middle" font-size="10" fill="#1e3a8a">Blue/Green Managed Online Endpoints</text>
+
+  <!-- Blue/Green (Dev) -->
+  <rect x="100" y="695" width="170" height="35" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="185" y="710" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">BLUE — v1</text>
+  <text x="185" y="723" text-anchor="middle" font-size="10" fill="#1e3a8a">1 node (90%)</text>
+
+  <rect x="285" y="695" width="170" height="35" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="370" y="710" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">GREEN — v2</text>
+  <text x="370" y="723" text-anchor="middle" font-size="10" fill="#14532d">1 node (10%)</text>
+
+  <!-- Inference Data (Dev) -->
+  <rect x="100" y="745" width="365" height="30" rx="8" fill="#fef2f2" stroke="#f87171" stroke-width="1"/>
+  <text x="280" y="765" text-anchor="middle" font-size="10" fill="#991b1b" font-weight="600">Inference Data (Blob)</text>
+
+  <!-- Private Endpoints (Dev) -->
+  <rect x="100" y="790" width="365" height="25" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <g transform="translate(110, 793) scale(1.0)">
+    <path d="M7.85,13.342a1.738,1.738,0,1,0,2.436-2.479,1.715,1.715,0,0,0-.626-.389V3.009H8.548v7.444a1.729,1.729,0,0,0-.7,2.891Z" fill="#b3b3b3"/>
+    <circle cx="9.084" cy="2.209" r="1.738" fill="url(#pe-grad1)"/>
+    <circle cx="9.065" cy="12.106" r="1.738" fill="url(#pe-grad2)"/>
+  </g>
+  <text x="140" y="807" text-anchor="start" font-size="10" fill="#334155" font-weight="600">Private Endpoints</text>
+
+  <!-- Observability (Dev) -->
+  <rect x="80" y="925" width="400" height="65" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="280" y="943" text-anchor="middle" font-size="11" font-weight="700" fill="#9d174d">Observability</text>
+  <rect x="90" y="950" width="105" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="143" y="965" text-anchor="middle" font-size="10" fill="#9d174d">Azure Monitor</text>
+  <rect x="205" y="950" width="105" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="258" y="965" text-anchor="middle" font-size="10" fill="#9d174d">App Insights</text>
+  <rect x="320" y="950" width="105" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="373" y="965" text-anchor="middle" font-size="10" fill="#9d174d">Log Analytics</text>
+
+
+  <!-- ============ STAGE SUBSCRIPTION ============ -->
+  <g filter="url(#shadowLg)">
+    <rect x="520" y="310" width="440" height="800" rx="10" fill="#fff" stroke="#fbbf24" stroke-width="2" opacity="0.95"/>
+    <rect x="520" y="310" width="440" height="30" rx="10" fill="url(#gradStage)"/>
+    <rect x="520" y="330" width="440" height="10" fill="url(#gradStage)"/>
+    <text x="740" y="330" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">STAGE SUBSCRIPTION</text>
+  </g>
+  <g transform="translate(535, 316) scale(1.2)">
+    <path d="M13.56,7.19a2.07,2.07,0,0,0,0-2.93h0L10,.69a2.06,2.06,0,0,0-2.92,0h0L3.52,4.26a2.09,2.09,0,0,0,0,2.93l3,3a.61.61,0,0,1,.17.41v5.52a.7.7,0,0,0,.2.5l1.35,1.35a.45.45,0,0,0,.66,0l1.31-1.31h0l.77-.77a.26.26,0,0,0,0-.38l-.55-.56a.29.29,0,0,1,0-.42l.55-.56a.26.26,0,0,0,0-.38L10.4,13a.28.28,0,0,1,0-.41L11,12a.26.26,0,0,0,0-.38l-.77-.78v-.28Zm-5-5.64A1.18,1.18,0,1,1,7.37,2.73,1.17,1.17,0,0,1,8.54,1.55Z" fill="url(#sub2-grad)"/>
+  </g>
+
+  <!-- AML Workspace (Stage) -->
+  <rect x="540" y="355" width="250" height="50" rx="8" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+  <g transform="translate(548, 360) scale(1.6)">
+    <path d="M15.8,17.5H2.2L1.1,13.4H16.9Z" fill="#198ab3"/>
+    <polygon points="6.9 0.5 6.9 6.9 1.1 13.4 2.2 17.5 11.1 6.9 11.1 0.5 6.9 0.5" fill="url(#ml2-grad)"/>
+    <path d="M15.8,17.5,9.6,11.1l2.6-3,4.7,5.3Z" fill="#32bedd"/>
+  </g>
+  <text x="690" y="380" text-anchor="middle" font-size="12" font-weight="600" fill="#78350f">AML Workspace (Stage)</text>
+  <text x="690" y="397" text-anchor="middle" font-size="10" fill="#78350f">Project-level Resources</text>
+
+  <!-- Container Registry (Stage) -->
+  <rect x="805" y="355" width="135" height="50" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <g transform="translate(820, 359) scale(1.5)">
+    <path d="M7.43,8.178l2.589-1.573,7.255,2.731A3.664,3.664,0,0,0,16.23,7.49l-.01-.05A4.194,4.194,0,0,0,14,6.32a4.91,4.91,0,0,0-5.1-4.7A5.071,5.071,0,0,0,4.06,4.91,4.621,4.621,0,0,0,0,9.39a4.73,4.73,0,0,0,4.89,4.54H7.43Z" fill="url(#acr2-grad1)"/>
+    <polygon points="10.07 7.159 10.08 11.439 17.99 13.119 17.99 10.139 10.07 7.159" fill="#767676"/>
+    <polyline points="10.07 7.159 7.93 8.459 7.93 12.439 10.08 11.439" fill="#999"/>
+    <polygon points="17.99 13.119 15.83 13.859 7.93 12.439 10.08 11.439 17.99 13.119" fill="url(#acr2-grad2)"/>
+    <polygon points="17.99 16.169 10.04 17.679 10.08 12.089 17.99 13.559 17.99 16.169" fill="#767676"/>
+    <path d="M7.93,16.4v-3.26l2.16-1v5.6Z" fill="#999"/>
+  </g>
+  <text x="873" y="400" text-anchor="middle" font-size="10" fill="#0369a1" font-weight="600">Container Registry</text>
+
+  <!-- Model Registry (Stage) -->
+  <rect x="540" y="415" width="400" height="28" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+  <text x="740" y="434" text-anchor="middle" font-size="11" font-weight="600" fill="#78350f">📋 Model Registry (Stage)</text>
+
+  <!-- VNet (Stage) -->
+  <rect x="545" y="453" width="395" height="460" rx="8" fill="#fefce8" stroke="#fde68a" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <g transform="translate(552, 457) scale(1.2)">
+    <circle cx="12.74" cy="8.99" r="1.16" fill="url(#vn-grad1)"/>
+    <circle cx="9.04" cy="9" r="1.16" fill="url(#vn-grad2)"/>
+    <circle cx="5.34" cy="9" r="1.16" fill="url(#vn-grad3)"/>
+    <path d="M2.61,7.28h.94a.3.3,0,0,1,.3.3v6.94a.6.6,0,0,1-.6.6H2.31a0,0,0,0,1,0,0V7.58a.3.3,0,0,1,.3-.3Z" transform="translate(13.18 16.93) rotate(134.92)" fill="#50e6ff"/>
+    <path d="M2.56,2.91H3.5a.3.3,0,0,1,.3.3v7.43a0,0,0,0,1,0,0H2.86a.6.6,0,0,1-.6-.6V3.21a.3.3,0,0,1,.3-.3Z" transform="translate(5.66 -0.16) rotate(44.92)" fill="#1490df"/>
+    <path d="M14.15,7.28h.94a.6.6,0,0,1,.6.6v6.94a.3.3,0,0,1-.3.3h-.94a.3.3,0,0,1-.3-.3V7.28a0,0,0,0,1,0,0Z" transform="translate(12.32 -7.28) rotate(45.08)" fill="#50e6ff"/>
+    <path d="M14.81,2.91h.94a0,0,0,0,1,0,0v7.43a.3.3,0,0,1-.3.3H14.5a.3.3,0,0,1-.3-.3V3.51a.6.6,0,0,1,.6-.6Z" transform="translate(30.36 0.99) rotate(135.08)" fill="#1490df"/>
+  </g>
+  <text x="580" y="471" text-anchor="start" font-size="11" font-weight="600" fill="#78350f">VNet (Stage)</text>
+
+  <!-- AKS Inference Cluster (Stage) - 2 compute nodes -->
+  <rect x="560" y="483" width="365" height="75" rx="8" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="740" y="465" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">AKS Inference Cluster — 2 Nodes</text>
+  <!-- Node 1 -->
+  <g transform="translate(694, 507) scale(1.8)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <!-- Node 2 -->
+  <g transform="translate(743, 507) scale(1.8)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <text x="740" y="549" text-anchor="middle" font-size="10" fill="#1e3a8a">Blue/Green Managed Online Endpoints</text>
+
+  <!-- Blue/Green (Stage) -->
+  <rect x="560" y="565" width="170" height="35" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="645" y="580" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">BLUE — v1</text>
+  <text x="645" y="593" text-anchor="middle" font-size="10" fill="#1e3a8a">1 node (100%)</text>
+
+  <rect x="745" y="565" width="170" height="35" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="830" y="580" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">GREEN — v2</text>
+  <text x="830" y="593" text-anchor="middle" font-size="10" fill="#14532d">1 node (0%)</text>
+
+  <!-- AML Compute Attached AKS (Stage) -->
+  <rect x="560" y="615" width="365" height="50" rx="8" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="740" y="637" text-anchor="middle" font-size="12" font-weight="600" fill="#3730a3">AML Compute Attached (AKS)</text>
+  <text x="740" y="655" text-anchor="middle" font-size="10" fill="#3730a3">Inference workloads managed by AML</text>
+
+  <!-- Inference Data (Stage) -->
+  <rect x="560" y="680" width="365" height="30" rx="8" fill="#fef2f2" stroke="#f87171" stroke-width="1"/>
+  <text x="740" y="700" text-anchor="middle" font-size="10" fill="#991b1b" font-weight="600">Inference Data (Blob)</text>
+
+  <!-- Private Endpoints (Stage) -->
+  <rect x="560" y="725" width="365" height="25" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <g transform="translate(570, 728) scale(1.0)">
+    <path d="M7.85,13.342a1.738,1.738,0,1,0,2.436-2.479,1.715,1.715,0,0,0-.626-.389V3.009H8.548v7.444a1.729,1.729,0,0,0-.7,2.891Z" fill="#b3b3b3"/>
+    <circle cx="9.084" cy="2.209" r="1.738" fill="url(#pe-grad1)"/>
+    <circle cx="9.065" cy="12.106" r="1.738" fill="url(#pe-grad2)"/>
+  </g>
+  <text x="600" y="742" text-anchor="start" font-size="10" fill="#334155" font-weight="600">Private Endpoints</text>
+
+  <!-- Observability (Stage) -->
+  <rect x="540" y="925" width="400" height="65" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="740" y="943" text-anchor="middle" font-size="11" font-weight="700" fill="#9d174d">Observability</text>
+  <rect x="550" y="950" width="105" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="603" y="965" text-anchor="middle" font-size="10" fill="#9d174d">Azure Monitor</text>
+  <rect x="665" y="950" width="105" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="718" y="965" text-anchor="middle" font-size="10" fill="#9d174d">App Insights</text>
+  <rect x="780" y="950" width="105" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="833" y="965" text-anchor="middle" font-size="10" fill="#9d174d">Log Analytics</text>
+
+
+  <!-- ============ PROD SUBSCRIPTION ============ -->
+  <g filter="url(#shadowLg)">
+    <rect x="980" y="310" width="460" height="800" rx="10" fill="#fff" stroke="#f87171" stroke-width="2" opacity="0.95"/>
+    <rect x="980" y="310" width="460" height="30" rx="10" fill="url(#gradProd)"/>
+    <rect x="980" y="330" width="460" height="10" fill="url(#gradProd)"/>
+    <text x="1210" y="330" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">PROD SUBSCRIPTION</text>
+  </g>
+  <g transform="translate(995, 316) scale(1.2)">
+    <path d="M13.56,7.19a2.07,2.07,0,0,0,0-2.93h0L10,.69a2.06,2.06,0,0,0-2.92,0h0L3.52,4.26a2.09,2.09,0,0,0,0,2.93l3,3a.61.61,0,0,1,.17.41v5.52a.7.7,0,0,0,.2.5l1.35,1.35a.45.45,0,0,0,.66,0l1.31-1.31h0l.77-.77a.26.26,0,0,0,0-.38l-.55-.56a.29.29,0,0,1,0-.42l.55-.56a.26.26,0,0,0,0-.38L10.4,13a.28.28,0,0,1,0-.41L11,12a.26.26,0,0,0,0-.38l-.77-.78v-.28Zm-5-5.64A1.18,1.18,0,1,1,7.37,2.73,1.17,1.17,0,0,1,8.54,1.55Z" fill="url(#sub3-grad)"/>
+  </g>
+
+  <!-- AML Workspace (Prod) -->
+  <rect x="1000" y="355" width="270" height="50" rx="8" fill="#fef2f2" stroke="#f87171" stroke-width="1"/>
+  <g transform="translate(1008, 360) scale(1.6)">
+    <path d="M15.8,17.5H2.2L1.1,13.4H16.9Z" fill="#198ab3"/>
+    <polygon points="6.9 0.5 6.9 6.9 1.1 13.4 2.2 17.5 11.1 6.9 11.1 0.5 6.9 0.5" fill="url(#ml3-grad)"/>
+    <path d="M15.8,17.5,9.6,11.1l2.6-3,4.7,5.3Z" fill="#32bedd"/>
+  </g>
+  <text x="1160" y="380" text-anchor="middle" font-size="12" font-weight="600" fill="#991b1b">AML Workspace (Prod)</text>
+  <text x="1160" y="397" text-anchor="middle" font-size="10" fill="#991b1b">Project-level Resources</text>
+
+  <!-- Container Registry (Prod) -->
+  <rect x="1285" y="355" width="135" height="50" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+  <g transform="translate(1300, 359) scale(1.5)">
+    <path d="M7.43,8.178l2.589-1.573,7.255,2.731A3.664,3.664,0,0,0,16.23,7.49l-.01-.05A4.194,4.194,0,0,0,14,6.32a4.91,4.91,0,0,0-5.1-4.7A5.071,5.071,0,0,0,4.06,4.91,4.621,4.621,0,0,0,0,9.39a4.73,4.73,0,0,0,4.89,4.54H7.43Z" fill="url(#acr3-grad1)"/>
+    <polygon points="10.07 7.159 10.08 11.439 17.99 13.119 17.99 10.139 10.07 7.159" fill="#767676"/>
+    <polyline points="10.07 7.159 7.93 8.459 7.93 12.439 10.08 11.439" fill="#999"/>
+    <polygon points="17.99 13.119 15.83 13.859 7.93 12.439 10.08 11.439 17.99 13.119" fill="url(#acr3-grad2)"/>
+    <polygon points="17.99 16.169 10.04 17.679 10.08 12.089 17.99 13.559 17.99 16.169" fill="#767676"/>
+    <path d="M7.93,16.4v-3.26l2.16-1v5.6Z" fill="#999"/>
+  </g>
+  <text x="1353" y="400" text-anchor="middle" font-size="10" fill="#0369a1" font-weight="600">Container Registry</text>
+
+  <!-- Model Registry (Prod) -->
+  <rect x="1000" y="415" width="420" height="28" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <text x="1210" y="434" text-anchor="middle" font-size="11" font-weight="600" fill="#991b1b">📋 Model Registry (Prod)</text>
+
+  <!-- VNet (Prod) -->
+  <rect x="1005" y="453" width="415" height="560" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <g transform="translate(1012, 457) scale(1.2)">
+    <circle cx="12.74" cy="8.99" r="1.16" fill="url(#vn-grad1)"/>
+    <circle cx="9.04" cy="9" r="1.16" fill="url(#vn-grad2)"/>
+    <circle cx="5.34" cy="9" r="1.16" fill="url(#vn-grad3)"/>
+    <path d="M2.61,7.28h.94a.3.3,0,0,1,.3.3v6.94a.6.6,0,0,1-.6.6H2.31a0,0,0,0,1,0,0V7.58a.3.3,0,0,1,.3-.3Z" transform="translate(13.18 16.93) rotate(134.92)" fill="#50e6ff"/>
+    <path d="M2.56,2.91H3.5a.3.3,0,0,1,.3.3v7.43a0,0,0,0,1,0,0H2.86a.6.6,0,0,1-.6-.6V3.21a.3.3,0,0,1,.3-.3Z" transform="translate(5.66 -0.16) rotate(44.92)" fill="#1490df"/>
+    <path d="M14.15,7.28h.94a.6.6,0,0,1,.6.6v6.94a.3.3,0,0,1-.3.3h-.94a.3.3,0,0,1-.3-.3V7.28a0,0,0,0,1,0,0Z" transform="translate(12.32 -7.28) rotate(45.08)" fill="#50e6ff"/>
+    <path d="M14.81,2.91h.94a0,0,0,0,1,0,0v7.43a.3.3,0,0,1-.3.3H14.5a.3.3,0,0,1-.3-.3V3.51a.6.6,0,0,1,.6-.6Z" transform="translate(30.36 0.99) rotate(135.08)" fill="#1490df"/>
+  </g>
+  <text x="1040" y="471" text-anchor="start" font-size="11" font-weight="600" fill="#991b1b">VNet (Prod)</text>
+
+  <!-- App Gateway -->
+  <rect x="1020" y="480" width="385" height="48" rx="8" fill="#f0fdf4" stroke="#5e9624" stroke-width="1.2"/>
+  <g transform="translate(1030, 484) scale(1.8)">
+    <rect x="2.82" y="2.82" width="12.35" height="12.35" rx="0.57" transform="translate(-3.73 9) rotate(-45)" fill="url(#agw-grad1)"/>
+    <path d="M10.89,10.51h2.84a.11.11,0,0,0,.1-.11V7.57a.1.1,0,0,0-.18-.07l-.78.78,0,.05a.1.1,0,0,1-.14,0L9.26,4.91a.1.1,0,0,0-.14,0l-.88.88a.11.11,0,0,0,0,.15l3.41,3.41a.11.11,0,0,1,0,.15l-.05.05-.78.78A.11.11,0,0,0,10.89,10.51Z" fill="#fff"/>
+    <path d="M6.92,10.51H4.08A.11.11,0,0,1,4,10.4V7.57a.1.1,0,0,1,.17-.07l.79.78,0,.05a.1.1,0,0,0,.14,0L8.55,4.91a.1.1,0,0,1,.14,0l.88.88a.11.11,0,0,1,0,.15L6.16,9.35a.11.11,0,0,0,0,.15l0,.05.78.78A.11.11,0,0,1,6.92,10.51Z" fill="#fff"/>
+    <path d="M6.82,13.07l2,2a.1.1,0,0,0,.14,0l2-2a.1.1,0,0,0-.07-.17H9.72a.11.11,0,0,1-.1-.1V8a.1.1,0,0,0-.1-.11H8.28A.11.11,0,0,0,8.17,8V12.8a.1.1,0,0,1-.1.1H6.89A.1.1,0,0,0,6.82,13.07Z" fill="#fff"/>
+    <path d="M10.65,7.78A2.71,2.71,0,0,1,7.33,3.5l0,0a2.71,2.71,0,0,1,3.29,4.3" fill="#0078d4"/>
+    <circle cx="7.53" cy="5.55" r="0.87" fill="#f2f2f2"/>
+    <circle cx="9.36" cy="7.13" r="0.56" fill="#f2f2f2"/>
+    <circle cx="10.64" cy="5.74" r="0.6" fill="#f2f2f2"/>
+  </g>
+  <text x="1210" y="505" text-anchor="middle" font-size="12" font-weight="600" fill="#065f46">Application Gateway</text>
+  <text x="1210" y="521" text-anchor="middle" font-size="10" fill="#065f46">WAF &amp; SSL Termination</text>
+
+  <!-- Arrow: App Gateway → APIM -->
+  <line x1="1210" y1="532" x2="1210" y2="560" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- API Management -->
+  <rect x="1020" y="565" width="385" height="48" rx="8" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1.2"/>
+  <g transform="translate(1030, 569) scale(1.8)">
+    <path d="M14.18,5.89A4.85,4.85,0,0,0,9.23,1.18,5,5,0,0,0,4.48,4.47,4.61,4.61,0,0,0,.5,9,4.67,4.67,0,0,0,5.29,13.5a3,3,0,0,0,.42,0h1.2a1.47,1.47,0,0,1-.11-.56v0A1.51,1.51,0,0,1,7,12.21H5.6l-.31,0A3.41,3.41,0,0,1,1.77,9,3.33,3.33,0,0,1,4.68,5.73l.76-.12.25-.73A3.73,3.73,0,0,1,9.23,2.45,3.6,3.6,0,0,1,12.91,5.9V7L14,7.15a2.59,2.59,0,0,1,2.26,2.49,2.63,2.63,0,0,1-2.62,2.54h-.15l-.08,0h-1A3.92,3.92,0,0,0,8.54,9a.64.64,0,1,0,0,1.27,2.65,2.65,0,0,1,0,5.29.64.64,0,1,0,0,1.27,3.92,3.92,0,0,0,3.87-3.34h1.05a.64.64,0,0,0,.2,0A3.91,3.91,0,0,0,17.5,9.64,3.86,3.86,0,0,0,14.18,5.89Z" fill="url(#apim-grad1)"/>
+    <rect x="6.8" y="11.35" width="3.12" height="3.12" rx="1.54" fill="url(#apim-grad2)"/>
+  </g>
+  <text x="1210" y="590" text-anchor="middle" font-size="12" font-weight="600" fill="#0369a1">API Management</text>
+  <text x="1210" y="606" text-anchor="middle" font-size="10" fill="#0369a1">Rate Limiting, Auth &amp; Routing</text>
+
+  <!-- Arrow: APIM → AKS Inference -->
+  <line x1="1210" y1="617" x2="1210" y2="645" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- AKS Inference Cluster (Prod) - 8 compute nodes -->
+  <rect x="1020" y="650" width="385" height="100" rx="8" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="1210" y="667" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">AKS Inference Cluster (HA) — 8 Nodes</text>
+  <!-- Row 1: 4 nodes -->
+  <g transform="translate(1110, 673) scale(1.5)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <g transform="translate(1149, 673) scale(1.5)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <g transform="translate(1188, 673) scale(1.5)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <g transform="translate(1227, 673) scale(1.5)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <!-- Row 2: 4 nodes -->
+  <g transform="translate(1110, 703) scale(1.5)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <g transform="translate(1149, 703) scale(1.5)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <g transform="translate(1188, 703) scale(1.5)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <g transform="translate(1227, 703) scale(1.5)">
+    <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
+    <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
+    <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
+    <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
+    <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
+  </g>
+  <text x="1210" y="743" text-anchor="middle" font-size="10" fill="#1e3a8a">Blue/Green — Multi-node, Auto-scale</text>
+
+  <!-- Blue/Green (Prod) -->
+  <rect x="1020" y="755" width="180" height="35" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="1110" y="770" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">BLUE — v1</text>
+  <text x="1110" y="783" text-anchor="middle" font-size="10" fill="#1e3a8a">6 nodes (95%)</text>
+
+  <rect x="1215" y="755" width="180" height="35" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="1305" y="770" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">GREEN — v2</text>
+  <text x="1305" y="783" text-anchor="middle" font-size="10" fill="#14532d">2 nodes (5%)</text>
+
+  <!-- AML Compute Attached AKS (Prod) -->
+  <rect x="1020" y="805" width="385" height="45" rx="8" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+  <text x="1210" y="825" text-anchor="middle" font-size="12" font-weight="600" fill="#3730a3">AML Compute Attached (AKS)</text>
+  <text x="1210" y="843" text-anchor="middle" font-size="10" fill="#3730a3">Inference workloads managed by AML</text>
+
+  <!-- Inference Data (Prod) -->
+  <rect x="1020" y="865" width="385" height="30" rx="8" fill="#fef2f2" stroke="#f87171" stroke-width="1"/>
+  <text x="1210" y="885" text-anchor="middle" font-size="10" fill="#991b1b" font-weight="600">Inference Data (Blob)</text>
+
+  <!-- Private Endpoints (Prod) -->
+  <rect x="1020" y="910" width="385" height="25" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <g transform="translate(1030, 913) scale(1.0)">
+    <path d="M7.85,13.342a1.738,1.738,0,1,0,2.436-2.479,1.715,1.715,0,0,0-.626-.389V3.009H8.548v7.444a1.729,1.729,0,0,0-.7,2.891Z" fill="#b3b3b3"/>
+    <circle cx="9.084" cy="2.209" r="1.738" fill="url(#pe-grad1)"/>
+    <circle cx="9.065" cy="12.106" r="1.738" fill="url(#pe-grad2)"/>
+  </g>
+  <text x="1060" y="927" text-anchor="start" font-size="10" fill="#334155" font-weight="600">Private Endpoints</text>
+
+  <!-- Observability (Prod) -->
+  <rect x="1000" y="1025" width="420" height="65" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1"/>
+  <text x="1210" y="1043" text-anchor="middle" font-size="11" font-weight="700" fill="#9d174d">Observability</text>
+  <rect x="1010" y="1050" width="115" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1068" y="1065" text-anchor="middle" font-size="10" fill="#9d174d">Azure Monitor</text>
+  <rect x="1135" y="1050" width="115" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1193" y="1065" text-anchor="middle" font-size="10" fill="#9d174d">App Insights</text>
+  <rect x="1260" y="1050" width="115" height="22" rx="4" fill="#fff" stroke="#f9a8d4" stroke-width="0.8"/>
+  <text x="1318" y="1065" text-anchor="middle" font-size="10" fill="#9d174d">Log Analytics</text>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- FOREGROUND: Deploy arrows (drawn last to render on top)       -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- Deploy arrow: Build → ACR → AKS Dev -->
+  <line x1="435" y1="250" x2="280" y2="345" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="295" y="272" width="100" height="14" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <text x="345" y="283" text-anchor="middle" font-size="10" fill="#64748b" font-weight="600">deploy to Dev</text>
+
+  <!-- Deploy arrow: Build → ACR → AKS Stage -->
+  <line x1="713" y1="250" x2="740" y2="345" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="678" y="272" width="110" height="14" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <text x="733" y="283" text-anchor="middle" font-size="10" fill="#64748b" font-weight="600">deploy to Stage</text>
+
+  <!-- Deploy arrow: Build → ACR → AKS Prod -->
+  <line x1="1033" y1="252" x2="1100" y2="345" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="920" y="272" width="105" height="14" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <text x="973" y="283" text-anchor="middle" font-size="10" fill="#64748b" font-weight="600">deploy to Prod</text>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- FLOW ANNOTATIONS                                              -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <g transform="translate(60, 1140)">
+    <circle cx="15" cy="12" r="12" fill="#4f46e5"/>
+    <text x="15" y="16" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">1</text>
+    <text x="35" y="16" text-anchor="start" font-size="10" fill="#334155">Data scientists create ML models + inference server, push code to feature/* branch</text>
+  </g>
+  <g transform="translate(60, 1165)">
+    <circle cx="15" cy="12" r="12" fill="#4f46e5"/>
+    <text x="15" y="16" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">2</text>
+    <text x="35" y="16" text-anchor="start" font-size="10" fill="#334155">GH Actions builds feature branch → deploys containers to Dev AKS for automated unit testing</text>
+  </g>
+  <g transform="translate(750, 1140)">
+    <circle cx="15" cy="12" r="12" fill="#4f46e5"/>
+    <text x="15" y="16" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">3</text>
+    <text x="35" y="16" text-anchor="start" font-size="10" fill="#334155">Tests pass → GH Actions creates PR to integration branch → deploys to Stage</text>
+  </g>
+  <g transform="translate(750, 1165)">
+    <circle cx="15" cy="12" r="12" fill="#4f46e5"/>
+    <text x="15" y="16" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">4</text>
+    <text x="35" y="16" text-anchor="start" font-size="10" fill="#334155">Stage tests pass → PR to main → deploy to Prod → merge to main</text>
+  </g>
+  <g transform="translate(60, 1190)">
+    <circle cx="15" cy="12" r="12" fill="#4f46e5"/>
+    <text x="15" y="16" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">5</text>
+    <text x="35" y="16" text-anchor="start" font-size="10" fill="#334155">Public ingress (Front Door → App Gateway → APIM) routes down into Prod AKS Inference Cluster</text>
+  </g>
+  <g transform="translate(750, 1190)">
+    <circle cx="15" cy="12" r="12" fill="#0ea5e9"/>
+    <text x="15" y="16" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">6</text>
+    <text x="35" y="16" text-anchor="start" font-size="10" fill="#334155">Model promotion: Dev (train) → Stage (validate) → Prod (canary → full)</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- LEGEND                                                        -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <g transform="translate(60, 1225)" font-size="10">
+    <text x="0" y="12" font-weight="700" fill="#475569" font-size="10">LEGEND:</text>
+
+    <rect x="70" y="2" width="14" height="14" rx="3" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+    <text x="90" y="13" fill="#475569">Dev</text>
+
+    <rect x="130" y="2" width="14" height="14" rx="3" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+    <text x="150" y="13" fill="#475569">Stage</text>
+
+    <rect x="200" y="2" width="14" height="14" rx="3" fill="#fef2f2" stroke="#f87171" stroke-width="1"/>
+    <text x="220" y="13" fill="#475569">Prod</text>
+
+    <rect x="270" y="2" width="14" height="14" rx="3" fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+    <text x="290" y="13" fill="#475569">AKS Inference</text>
+
+    <rect x="390" y="2" width="14" height="14" rx="3" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+    <text x="410" y="13" fill="#475569">Training / Compute</text>
+
+    <rect x="530" y="2" width="14" height="14" rx="3" fill="#dcfce7" stroke="#4ade80" stroke-width="1"/>
+    <text x="550" y="13" fill="#475569">Green (canary)</text>
+
+    <rect x="655" y="2" width="14" height="14" rx="3" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+    <text x="675" y="13" fill="#475569">Data / ACR</text>
+
+    <rect x="755" y="2" width="14" height="14" rx="3" fill="none" stroke="#86efac" stroke-width="1.2" stroke-dasharray="4,2"/>
+    <text x="775" y="13" fill="#475569">VNet</text>
+
+    <rect x="820" y="2" width="14" height="14" rx="3" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="840" y="13" fill="#475569">Ingress</text>
+
+    <rect x="895" y="2" width="14" height="14" rx="3" fill="#f0fdf4" stroke="#5e9624" stroke-width="1"/>
+    <text x="915" y="13" fill="#475569">App GW</text>
+
+    <rect x="970" y="2" width="14" height="14" rx="3" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1"/>
+    <text x="990" y="13" fill="#475569">APIM</text>
+
+    <line x1="1045" y1="10" x2="1085" y2="10" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="1095" y="13" fill="#475569">Data Flow</text>
+  </g>
+</svg>

@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1050" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="gradTitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1300" height="1050" rx="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="1300" height="56" rx="12" fill="url(#gradTitle)"/>
+  <rect x="0" y="28" width="1300" height="28" fill="url(#gradTitle)"/>
+  <text x="650" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">Architecture SVG — Requirements Traceability to Meeting Decisions</text>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- MEETING 1: Design Session                                  -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="75" width="1220" height="185" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="40" y="75" width="1220" height="28" rx="8" fill="#3b82f6"/>
+    <rect x="40" y="95" width="1220" height="8" fill="#3b82f6"/>
+    <text x="650" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Meeting 1: AML Reference Architecture Design Session (Apr 13)</text>
+  </g>
+
+  <g font-size="11" fill="#1e293b">
+    <text x="60" y="122" font-weight="700" fill="#1e3a8a">Requirement</text>
+    <text x="750" y="122" font-weight="700" fill="#1e3a8a">Status</text>
+    <text x="850" y="122" font-weight="700" fill="#1e3a8a">Where in SVG</text>
+
+    <!-- Row 1 -->
+    <text x="60" y="142" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="142">Dev / Stage / Prod environment separation</text>
+    <text x="750" y="142" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="142" fill="#64748b">3 subscription columns with distinct colors</text>
+
+    <!-- Row 2 -->
+    <text x="60" y="162" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="162">AKS as inference engine (vs AML managed endpoints)</text>
+    <text x="750" y="162" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="162" fill="#64748b">AKS Inference Cluster boxes in all 3 envs + decision slide</text>
+
+    <!-- Row 3 -->
+    <text x="60" y="182" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="182">CI/CD with GitHub Actions &amp; git branching strategy</text>
+    <text x="750" y="182" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="182" fill="#64748b">CI/CD row: feature → Build → ACR → AKS → integration → main</text>
+
+    <!-- Row 4 -->
+    <text x="60" y="202" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="202">Container registries per environment</text>
+    <text x="750" y="202" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="202" fill="#64748b">ACR inside each subscription's workspace area</text>
+
+    <!-- Row 5 -->
+    <text x="60" y="222" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="222">Front Door strategy (prod-only ingress)</text>
+    <text x="750" y="222" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="222" fill="#64748b">Public ingress aligned above Prod only, arrow pointing down</text>
+
+    <!-- Row 6 -->
+    <text x="60" y="242" font-size="16" fill="#d97706">⚠️</text>
+    <text x="82" y="242">Multi-region production &amp; DR</text>
+    <text x="750" y="242" font-weight="600" fill="#d97706">Not yet</text>
+    <text x="850" y="242" fill="#64748b">Single-region shown. Multi-region requires separate diagram</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- MEETING 2: Weekly Sync                                      -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="275" width="1220" height="175" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="40" y="275" width="1220" height="28" rx="8" fill="#3b82f6"/>
+    <rect x="40" y="295" width="1220" height="8" fill="#3b82f6"/>
+    <text x="650" y="294" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Meeting 2: AML Reference Architecture Weekly Sync (Apr 20)</text>
+  </g>
+
+  <g font-size="11" fill="#1e293b">
+    <text x="60" y="322" font-weight="700" fill="#1e3a8a">Requirement</text>
+    <text x="750" y="322" font-weight="700" fill="#1e3a8a">Status</text>
+    <text x="850" y="322" font-weight="700" fill="#1e3a8a">Where in SVG</text>
+
+    <text x="60" y="342" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="342">Scope: online inference (no streaming)</text>
+    <text x="750" y="342" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="342" fill="#64748b">Online endpoints shown via AKS Inference Clusters</text>
+
+    <text x="60" y="362" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="362">AKS as lead inference choice</text>
+    <text x="750" y="362" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="362" fill="#64748b">AKS Inference Cluster primary in all envs</text>
+
+    <text x="60" y="382" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="382">Training on AML compute (Dev only)</text>
+    <text x="750" y="382" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="382" fill="#64748b">Training Cluster (AKS) only in Dev subscription</text>
+
+    <text x="60" y="402" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="402">Registry strategy (per environment)</text>
+    <text x="750" y="402" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="402" fill="#64748b">ACR + Model Registry inside each subscription</text>
+
+    <text x="60" y="422" font-size="16" fill="#dc2626">❌</text>
+    <text x="82" y="422">OneLake vs ADLS Gen2 risks</text>
+    <text x="750" y="422" font-weight="600" fill="#dc2626">Not shown</text>
+    <text x="850" y="422" fill="#64748b">Storage shown as generic Blob. Data lake choice needs own slide</text>
+
+    <text x="60" y="442" font-size="16" fill="#d97706">⚠️</text>
+    <text x="82" y="442">Diagram structure: static / networking / process (3 views)</text>
+    <text x="750" y="442" font-weight="600" fill="#d97706">Partial</text>
+    <text x="850" y="442" fill="#64748b">Combined view created. Separate networking diagram pending</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- MEETING 3: Components &amp; Networking                         -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="465" width="1220" height="155" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="40" y="465" width="1220" height="28" rx="8" fill="#3b82f6"/>
+    <rect x="40" y="485" width="1220" height="8" fill="#3b82f6"/>
+    <text x="650" y="484" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Meeting 3: Components &amp; Networking (Mar 31)</text>
+  </g>
+
+  <g font-size="11" fill="#1e293b">
+    <text x="60" y="512" font-weight="700" fill="#1e3a8a">Requirement</text>
+    <text x="750" y="512" font-weight="700" fill="#1e3a8a">Status</text>
+    <text x="850" y="512" font-weight="700" fill="#1e3a8a">Where in SVG</text>
+
+    <text x="60" y="532" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="532">Training only in Dev</text>
+    <text x="750" y="532" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="532" fill="#64748b">Training Cluster with 3 GPU nodes only in Dev sub</text>
+
+    <text x="60" y="552" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="552">Model promotion patterns (Dev → Stage → Prod)</text>
+    <text x="750" y="552" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="552" fill="#64748b">CI/CD pipeline shows feature → integration → main flow</text>
+
+    <text x="60" y="572" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="572">Registry + data segregation per environment</text>
+    <text x="750" y="572" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="572" fill="#64748b">Separate ACR, Model Registry, and Blob per subscription</text>
+
+    <text x="60" y="592" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="592">Networking &amp; security: VNet, Private Endpoints, App GW, APIM</text>
+    <text x="750" y="592" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="592" fill="#64748b">VNet + PE in each env; App GW → APIM → AKS in Prod</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- MEETING 4: Kick-off                                         -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="635" width="1220" height="115" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="40" y="635" width="1220" height="28" rx="8" fill="#3b82f6"/>
+    <rect x="40" y="655" width="1220" height="8" fill="#3b82f6"/>
+    <text x="650" y="654" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Meeting 4: Kick-off (Mar 5)</text>
+  </g>
+
+  <g font-size="11" fill="#1e293b">
+    <text x="60" y="682" font-weight="700" fill="#1e3a8a">Requirement</text>
+    <text x="750" y="682" font-weight="700" fill="#1e3a8a">Status</text>
+    <text x="850" y="682" font-weight="700" fill="#1e3a8a">Where in SVG</text>
+
+    <text x="60" y="702" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="702">Overall scope: AML inference reference architecture</text>
+    <text x="750" y="702" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="702" fill="#64748b">Full multi-env AML + AKS architecture diagram</text>
+
+    <text x="60" y="722" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="722">Per-subscription deployment model (not centralized)</text>
+    <text x="750" y="722" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="722" fill="#64748b">Each env has own subscription, workspace, ACR, VNet</text>
+
+    <text x="60" y="742" font-size="16" fill="#d97706">⚠️</text>
+    <text x="82" y="742">AML + Foundry roadmap positioning</text>
+    <text x="750" y="742" font-weight="600" fill="#d97706">N/A</text>
+    <text x="850" y="742" fill="#64748b">Strategic roadmap topic — not a diagram requirement</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- MEETING 5: Work-stream                                      -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="765" width="1220" height="155" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="40" y="765" width="1220" height="28" rx="8" fill="#3b82f6"/>
+    <rect x="40" y="785" width="1220" height="8" fill="#3b82f6"/>
+    <text x="650" y="784" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Meeting 5: Work-stream — Anil, Ethan, Joakim</text>
+  </g>
+
+  <g font-size="11" fill="#1e293b">
+    <text x="60" y="812" font-weight="700" fill="#1e3a8a">Requirement</text>
+    <text x="750" y="812" font-weight="700" fill="#1e3a8a">Status</text>
+    <text x="850" y="812" font-weight="700" fill="#1e3a8a">Where in SVG</text>
+
+    <text x="60" y="832" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="832">Online endpoints via AKS (primary)</text>
+    <text x="750" y="832" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="832" fill="#64748b">AKS Inference Cluster with blue/green in all envs</text>
+
+    <text x="60" y="852" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="852">Batch inference via AML pipelines</text>
+    <text x="750" y="852" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="852" fill="#64748b">Separate diagram: azure-ml-batch-inference.svg</text>
+
+    <text x="60" y="872" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="872">Public vs private inference endpoints</text>
+    <text x="750" y="872" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="872" fill="#64748b">Public ingress via Front Door → App GW → APIM; PE in all VNets</text>
+
+    <text x="60" y="892" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="892">Registry-per-environment agreement</text>
+    <text x="750" y="892" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="892" fill="#64748b">ACR + Model Registry in each subscription</text>
+
+    <text x="60" y="912" font-size="16" fill="#059669">✅</text>
+    <text x="82" y="912">Training only in Dev</text>
+    <text x="750" y="912" font-weight="600" fill="#059669">Implemented</text>
+    <text x="850" y="912" fill="#64748b">Training Cluster only in Dev; Stage/Prod inference-only</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- SUMMARY SCORECARD                                           -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="940" width="1220" height="90" rx="8" fill="#fff" stroke="#1e3a8a" stroke-width="2"/>
+    <rect x="40" y="940" width="1220" height="28" rx="8" fill="#1e3a8a"/>
+    <rect x="40" y="960" width="1220" height="8" fill="#1e3a8a"/>
+    <text x="650" y="959" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">SUMMARY SCORECARD</text>
+  </g>
+
+  <g font-size="13">
+    <rect x="80" y="980" width="200" height="35" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+    <text x="180" y="1002" text-anchor="middle" font-weight="700" fill="#059669">✅ Implemented: 18</text>
+
+    <rect x="320" y="980" width="200" height="35" rx="6" fill="#fffbeb" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="420" y="1002" text-anchor="middle" font-weight="700" fill="#d97706">⚠️ Partial / N/A: 4</text>
+
+    <rect x="560" y="980" width="200" height="35" rx="6" fill="#fef2f2" stroke="#f87171" stroke-width="1.5"/>
+    <text x="660" y="1002" text-anchor="middle" font-weight="700" fill="#dc2626">❌ Not shown: 1</text>
+
+    <text x="810" y="1002" fill="#475569" font-size="11">Coverage: <tspan font-weight="700" fill="#059669">78% fully implemented</tspan>, remaining items need separate diagrams (DR, networking, data lake)</text>
+  </g>
+</svg>

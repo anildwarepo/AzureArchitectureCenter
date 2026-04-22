@@ -277,12 +277,29 @@ Use max 6–7 colors per diagram.
 - [ ] Icon + label pairs budget 40–50px vertical space below the preceding element
 - [ ] All `<defs>` references (`url(#...)`, `marker-end`) resolve correctly
 - [ ] No text overlap; arrows don't cross text
+- [ ] **Cross-layer arrows rendered last** — arrows that span across layers/sections (e.g., CI/CD → subscription columns) must be drawn AFTER all background elements so they appear in the foreground. Use a white semi-transparent rect behind labels for readability
+- [ ] **Neutral arrow colors** — use `#94a3b8` (slate) for all connector/flow arrows and `#64748b` for arrow label text. Never use saturated reds, greens, or purples for arrows — reserve those for section borders and headers only
+- [ ] **Compute icons center-aligned** — when placing multiple icons in a row inside a box, calculate `startX = boxCenterX - (totalWidth / 2)` where `totalWidth = (iconWidth * count) + (gap * (count-1))`. Icon width at scale(1.8) ≈ 33px, at scale(1.5) ≈ 27px. Use 12–15px gaps between icons
+- [ ] **Uniform column heights** — when using side-by-side columns (e.g., Dev / Stage / Prod subscriptions), set ALL columns to the same height (use the tallest column's height). Columns with less content should leave white space at the bottom rather than being shorter
+- [ ] **Minimum 35–40px gap between layers** — leave at least 35px vertical space between major horizontal sections (e.g., CI/CD pipeline row and subscription columns below). This ensures cross-layer arrows have clean visible space and labels don't overlap section boundaries
+- [ ] **Title text above icons, not below** — inside cluster/compute boxes, place the title text at the TOP of the box and icons below. Never place the title at the same y-position as the icons or it will overlap them
+- [ ] **Arrow labels in clear space** — cross-layer arrow labels must be positioned in the gap between sections (not overlapping section headers). Place label backgrounds (`<rect>` with `fill-opacity="0.9"`) at the midpoint of the arrow, in the open gap area
+- [ ] **VNet icons must include connecting paths** — the Azure VNet icon has 3 green circles AND 4 blue/cyan connecting V-shaped paths. Always include all elements, not just the circles
+- [ ] **Observability section** — add an Observability box (Azure Monitor, App Insights, Log Analytics) at the bottom of each subscription, below the VNet but inside the subscription border
 - [ ] Legend covers all visual categories
 - [ ] `viewBox` accommodates all content with 40–60px margins
 - [ ] SVG is valid XML — all tags closed, attributes quoted
 - [ ] No `<style>`, `<script>`, or `<image href>` — fully self-contained
 
-**Save to:** `./Architecture_Diagrams/{descriptive-name}.svg`
+**Save to:** `./Architecture_Diagrams/{domain-folder}/{descriptive-name}.svg`
+
+**Folder structure:**
+```
+./Architecture_Diagrams/
+  Azure Machine Learning/    — AML inference, batch, training, decision slides
+  Foundry/                   — AI Foundry agent and platform diagrams
+```
+Place each diagram in the appropriate domain subfolder. Create a new subfolder if the domain doesn't exist yet.
 
 ## Anti-Patterns
 
@@ -294,6 +311,12 @@ Use max 6–7 colors per diagram.
 6. **Never skip the legend** — every diagram needs one
 7. **Never overlap boxes or text** — maintain 20–30px spacing minimum
 8. **Never leave orphan arrows** — every arrow connects two visible elements
+9. **Never draw cross-layer arrows before the layers they cross** — SVG renders in document order; arrows drawn early get covered by later elements. Always draw arrows that span across sections (e.g., CI/CD pipeline → subscription columns) AFTER all the sections they cross, in a dedicated foreground group at the end. Add a semi-transparent white `<rect>` behind arrow labels for readability against colored backgrounds
+10. **Never use saturated colors for arrows** — use neutral `#94a3b8` (slate) for all connector arrows and `#64748b` for arrow labels. Saturated reds, greens, and purples should only be used for section borders and headers, not flow arrows
+11. **Never place icons off-center in their container** — always calculate centered positions: `startX = containerX + (containerWidth / 2) - (totalIconsWidth / 2)`. Evenly space icons with consistent gaps (12–15px)
+12. **Never place title text at the same y as icons** — inside boxes with icons (e.g., compute clusters), put the title at the top of the box and icons below with at least 8px separation. Text placed at icon y-level will overlap
+13. **Never put observability/cross-cutting sections inside the VNet** — observability (Azure Monitor, App Insights, Log Analytics) belongs below the VNet boundary but inside the subscription box. It's a subscription-level concern, not a VNet resource
+14. **Never make the CI/CD pipeline box too narrow for its content** — if the pipeline has many steps (Build → ACR → AKS for each env), widen the box to fit all steps with proper spacing. Truncating with text like "→ ACR → AKS" is not acceptable
 
 ## Non-Azure Components
 
