@@ -532,9 +532,9 @@
 
   <!-- AKS Inference Cluster (Stage) - 2 compute nodes -->
   <rect x="560" y="483" width="365" height="75" rx="8" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
-  <text x="740" y="465" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">AKS Inference Cluster — 2 Nodes</text>
+  <text x="740" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">AKS Inference Cluster — 2 Nodes</text>
   <!-- Node 1 -->
-  <g transform="translate(694, 507) scale(1.8)">
+  <g transform="translate(694, 508) scale(1.8)">
     <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
     <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
     <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
@@ -542,14 +542,14 @@
     <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
   </g>
   <!-- Node 2 -->
-  <g transform="translate(743, 507) scale(1.8)">
+  <g transform="translate(743, 508) scale(1.8)">
     <rect x="-0.12" y="0.21" width="18" height="12" rx="0.6" fill="url(#runner-grad1)"/>
     <polygon points="11.88 4.46 11.88 7.95 8.88 9.71 8.88 6.21 11.88 4.46" fill="#50e6ff"/>
     <polygon points="11.88 4.46 8.88 6.22 5.88 4.46 8.88 2.71 11.88 4.46" fill="#c3f1ff"/>
     <polygon points="8.88 6.22 8.88 9.71 5.88 7.95 5.88 4.46 8.88 6.22" fill="#9cebff"/>
     <path d="M12.49,15.84c-1.78-.28-1.85-1.56-1.85-3.63H7.11c0,2.07-.06,3.35-1.84,3.63a1,1,0,0,0-.89,1h9A1,1,0,0,0,12.49,15.84Z" fill="url(#runner-grad2)"/>
   </g>
-  <text x="740" y="549" text-anchor="middle" font-size="10" fill="#1e3a8a">Blue/Green Managed Online Endpoints</text>
+  <text x="740" y="553" text-anchor="middle" font-size="10" fill="#1e3a8a">Blue/Green Managed Online Endpoints</text>
 
   <!-- Blue/Green (Stage) -->
   <rect x="560" y="565" width="170" height="35" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
