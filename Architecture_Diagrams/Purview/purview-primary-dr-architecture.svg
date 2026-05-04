@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 920"
+     font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <linearGradient id="hdr-blue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="hdr-teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0f766e"/><stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="hdr-purple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="hdr-amber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d97706"/><stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="func-grad" x1="-175.993" y1="-343.723" x2="-175.993" y2="-359.232"
+        gradientTransform="translate(212.573 370.548) scale(1.156 1.029)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fea11b"/><stop offset="0.284" stop-color="#fea51a"/>
+      <stop offset="0.547" stop-color="#feb018"/><stop offset="0.8" stop-color="#ffc314"/>
+      <stop offset="1" stop-color="#ffd70f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1300" height="920" rx="12" fill="#fafafa"/>
+
+  <!-- Title -->
+  <text x="650" y="34" text-anchor="middle"
+        font-size="20" font-weight="700" fill="#1e293b">Microsoft Purview — Primary &amp; Disaster Recovery Architecture</text>
+  <text x="650" y="54" text-anchor="middle"
+        font-size="12" fill="#64748b">Cross-Tenant Governance Replication · Kafka Events + REST APIs</text>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- ROW 1 — DATA SOURCES (left side)                -->
+  <!-- ════════════════════════════════════════════════ -->
+  <rect x="60" y="72" width="540" height="110" rx="10"
+        fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="60" y="72" width="540" height="26" rx="10" fill="url(#hdr-blue)"/>
+  <rect x="60" y="88" width="540" height="10" fill="url(#hdr-blue)"/>
+  <text x="330" y="90" text-anchor="middle"
+        font-size="11" font-weight="700" fill="#fff">TENANT A — DATA SOURCES</text>
+
+  <rect x="80" y="106" width="150" height="60" rx="8"
+        fill="#fff" stroke="#60a5fa" stroke-width="1" filter="url(#shadow)"/>
+  <text x="155" y="132" text-anchor="middle"
+        font-size="12" font-weight="600" fill="#1e3a8a">Azure Cloud</text>
+  <text x="155" y="148" text-anchor="middle"
+        font-size="10" fill="#64748b">Data Services</text>
+
+  <rect x="250" y="106" width="150" height="60" rx="8"
+        fill="#fff" stroke="#60a5fa" stroke-width="1" filter="url(#shadow)"/>
+  <text x="325" y="132" text-anchor="middle"
+        font-size="12" font-weight="600" fill="#1e3a8a">Microsoft 365</text>
+  <text x="325" y="148" text-anchor="middle"
+        font-size="10" fill="#64748b">M365 Sources</text>
+
+  <rect x="420" y="106" width="160" height="60" rx="8"
+        fill="#fff" stroke="#60a5fa" stroke-width="1" filter="url(#shadow)"/>
+  <text x="500" y="132" text-anchor="middle"
+        font-size="12" font-weight="600" fill="#1e3a8a">On-Premises</text>
+  <text x="500" y="148" text-anchor="middle"
+        font-size="10" fill="#64748b">On-Prem Sources</text>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- ROW 2 — PURVIEW CONNECTORS (left side)          -->
+  <!-- ════════════════════════════════════════════════ -->
+  <rect x="120" y="222" width="420" height="65" rx="8"
+        fill="#f0fdfa" stroke="#14b8a6" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="120" y="222" width="420" height="24" rx="8" fill="url(#hdr-teal)"/>
+  <rect x="120" y="240" width="420" height="6" fill="url(#hdr-teal)"/>
+  <text x="330" y="240" text-anchor="middle"
+        font-size="11" font-weight="700" fill="#fff">PURVIEW CONNECTORS (TENANT A)</text>
+  <text x="330" y="268" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#134e4a">Scan &amp; Ingest Metadata from Data Sources</text>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- ROW 3 — PURVIEW PRIMARY (left side)             -->
+  <!-- ════════════════════════════════════════════════ -->
+  <rect x="60" y="330" width="540" height="82" rx="8"
+        fill="#f0fdfa" stroke="#14b8a6" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="60" y="330" width="540" height="24" rx="8" fill="url(#hdr-teal)"/>
+  <rect x="60" y="348" width="540" height="6" fill="url(#hdr-teal)"/>
+  <text x="330" y="348" text-anchor="middle"
+        font-size="12" font-weight="700" fill="#fff">TENANT A — PURVIEW (PRIMARY)</text>
+  <text x="330" y="375" text-anchor="middle"
+        font-size="12" font-weight="600" fill="#134e4a">Microsoft Purview Account</text>
+  <text x="330" y="395" text-anchor="middle"
+        font-size="10" fill="#64748b">Active Governance Instance · Emits ATLAS_ENTITIES Kafka Events</text>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- ROW 3 — CUSTOM APP (right side, same row)       -->
+  <!-- ════════════════════════════════════════════════ -->
+  <rect x="740" y="330" width="500" height="82" rx="8"
+        fill="#fffbeb" stroke="#fbbf24" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="740" y="330" width="500" height="24" rx="8" fill="url(#hdr-amber)"/>
+  <rect x="740" y="348" width="500" height="6" fill="url(#hdr-amber)"/>
+  <text x="990" y="348" text-anchor="middle"
+        font-size="12" font-weight="700" fill="#fff">CUSTOM APPLICATION — AZURE FUNCTIONS</text>
+  <!-- Azure Functions icon (left of label text) -->
+  <g transform="translate(830, 366) scale(1.5)">
+    <g><path d="M2.37,7.475H3.2a.267.267,0,0,1,.267.267v6.148a.533.533,0,0,1-.533.533H2.1a0,0,0,0,1,0,0V7.741a.267.267,0,0,1,.267-.267Z" transform="translate(12.507 16.705) rotate(134.919)" fill="#50e6ff"/><path d="M2.325,3.6h.833a.267.267,0,0,1,.267.267v6.583a0,0,0,0,1,0,0H2.591a.533.533,0,0,1-.533-.533V3.865A.267.267,0,0,1,2.325,3.6Z" transform="translate(5.759 0.114) rotate(44.919)" fill="#1490df"/></g>
+    <g><path d="M14.53,7.475h.833a.533.533,0,0,1,.533.533v6.148a.267.267,0,0,1-.267.267H14.8a.267.267,0,0,1-.267-.267V7.475a0,0,0,0,1,0,0Z" transform="translate(12.223 -7.555) rotate(45.081)" fill="#50e6ff"/><path d="M15.108,3.6h.833a0,0,0,0,1,0,0v6.583a.267.267,0,0,1-.267.267h-.833a.267.267,0,0,1-.267-.267V4.131a.533.533,0,0,1,.533-.533Z" transform="translate(31.022 1.222) rotate(135.081)" fill="#1490df"/></g>
+    <path d="M8.459,9.9H4.87a.193.193,0,0,1-.2-.181.166.166,0,0,1,.018-.075L8.991,1.13a.206.206,0,0,1,.186-.106h4.245a.193.193,0,0,1,.2.181.165.165,0,0,1-.035.1L8.534,7.966h4.928a.193.193,0,0,1,.2.181.176.176,0,0,1-.052.122L5.421,16.788c-.077.046-.624.5-.356-.189h0Z" fill="url(#func-grad)"/>
+  </g>
+  <text x="1010" y="382" text-anchor="middle"
+        font-size="12" font-weight="600" fill="#78350f">Receives Kafka Events from Purview</text>
+  <text x="990" y="400" text-anchor="middle"
+        font-size="10" fill="#64748b">Replicates via REST APIs · SP-A (Primary) · SP-B (DR)</text>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- ROW 4 — PRIMARY DATA MAP (left)                 -->
+  <!-- ════════════════════════════════════════════════ -->
+  <rect x="40" y="460" width="580" height="205" rx="10"
+        fill="#f0fdfa" fill-opacity="0.3" stroke="#14b8a6"
+        stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="55" y="480" font-size="12" font-weight="700" fill="#0f766e">
+    PRIMARY — DATA MAP &amp; GOVERNANCE</text>
+
+  <text x="180" y="500" text-anchor="middle"
+        font-size="10" font-weight="600" fill="#0d9488">via Kafka Events</text>
+  <rect x="65" y="510" width="120" height="52" rx="6"
+        fill="#fff" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="125" y="532" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#134e4a">Data Map</text>
+  <text x="125" y="548" text-anchor="middle"
+        font-size="10" fill="#64748b">Entities</text>
+  <rect x="200" y="510" width="125" height="52" rx="6"
+        fill="#fff" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="263" y="532" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#134e4a">Classifications</text>
+  <text x="263" y="548" text-anchor="middle"
+        font-size="10" fill="#64748b">Labels</text>
+
+  <text x="470" y="500" text-anchor="middle"
+        font-size="10" font-weight="600" fill="#d97706">via REST APIs</text>
+  <rect x="360" y="510" width="120" height="52" rx="6"
+        fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="420" y="532" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#78350f">Data Products</text>
+  <text x="420" y="548" text-anchor="middle"
+        font-size="10" fill="#64748b">REST only</text>
+  <rect x="495" y="510" width="110" height="52" rx="6"
+        fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="550" y="532" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#78350f">Governance</text>
+  <text x="550" y="548" text-anchor="middle"
+        font-size="10" fill="#64748b">Domains</text>
+
+  <text x="320" y="590" text-anchor="middle"
+        font-size="10" fill="#64748b" font-style="italic">Kafka: Data Map entities + classifications · REST: Data Products + Governance Domains</text>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- ROW 4 — DR DATA MAP (right)                     -->
+  <!-- ════════════════════════════════════════════════ -->
+  <rect x="660" y="460" width="600" height="205" rx="10"
+        fill="#f5f3ff" fill-opacity="0.3" stroke="#8b5cf6"
+        stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="675" y="480" font-size="12" font-weight="700" fill="#7c3aed">
+    DISASTER RECOVERY — TENANT B PURVIEW</text>
+
+  <text x="810" y="500" text-anchor="middle"
+        font-size="10" font-weight="600" fill="#0d9488">via Kafka Events</text>
+  <rect x="690" y="510" width="120" height="52" rx="6"
+        fill="#fff" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="750" y="532" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#5b21b6">Data Map</text>
+  <text x="750" y="548" text-anchor="middle"
+        font-size="10" fill="#64748b">Entities</text>
+  <rect x="825" y="510" width="125" height="52" rx="6"
+        fill="#fff" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="888" y="532" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#5b21b6">Classifications</text>
+  <text x="888" y="548" text-anchor="middle"
+        font-size="10" fill="#64748b">Labels</text>
+
+  <text x="1095" y="500" text-anchor="middle"
+        font-size="10" font-weight="600" fill="#d97706">via REST APIs</text>
+  <rect x="980" y="510" width="120" height="52" rx="6"
+        fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="1040" y="532" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#78350f">Data Products</text>
+  <text x="1040" y="548" text-anchor="middle"
+        font-size="10" fill="#64748b">REST only</text>
+  <rect x="1115" y="510" width="125" height="52" rx="6"
+        fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="1178" y="532" text-anchor="middle"
+        font-size="11" font-weight="600" fill="#78350f">Governance</text>
+  <text x="1178" y="548" text-anchor="middle"
+        font-size="10" fill="#64748b">Domains</text>
+
+  <text x="950" y="590" text-anchor="middle"
+        font-size="10" fill="#64748b" font-style="italic">Kafka: Data Map entities + classifications · REST: Data Products + Governance Domains</text>
+
+  <text x="960" y="640" text-anchor="middle"
+        font-size="10" fill="#7c3aed" font-style="italic">↺ Replay events for DR resynchronization</text>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- FOREGROUND — CLEAN ARROWS (vertical + horizontal) -->
+  <!-- ════════════════════════════════════════════════ -->
+
+  <!-- ① Connectors → Data Sources (upward) -->
+  <line x1="330" y1="222" x2="330" y2="185"
+        stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="300" cy="203" r="10" fill="#2563eb"/>
+  <text x="300" y="207" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#fff">1</text>
+  <rect x="340" y="194" width="94" height="16" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <text x="387" y="206" text-anchor="middle"
+        font-size="10" fill="#64748b">Scan Sources</text>
+
+  <!-- ② Connectors → Purview Primary (downward) -->
+  <line x1="330" y1="287" x2="330" y2="328"
+        stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="300" cy="308" r="10" fill="#0f766e"/>
+  <text x="300" y="312" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#fff">2</text>
+  <rect x="340" y="300" width="125" height="16" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <text x="403" y="312" text-anchor="middle"
+        font-size="10" fill="#64748b">Feed Scan Results</text>
+
+  <!-- ③ Purview Primary → Custom App (horizontal right) -->
+  <line x1="600" y1="371" x2="738" y2="371"
+        stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="628" cy="371" r="10" fill="#d97706"/>
+  <text x="628" y="375" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#fff">3</text>
+  <rect x="645" y="362" width="86" height="16" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <text x="688" y="374" text-anchor="middle"
+        font-size="10" fill="#64748b">Kafka Events</text>
+
+  <!-- ④ Custom App → Primary Data Map (downward left) -->
+  <line x1="860" y1="412" x2="330" y2="458"
+        stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="595" cy="430" r="10" fill="#0f766e"/>
+  <text x="595" y="434" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#fff">4</text>
+  <rect x="610" y="422" width="108" height="16" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <text x="664" y="434" text-anchor="middle"
+        font-size="10" fill="#64748b">SP-A · REST APIs</text>
+
+  <!-- ⑤ Custom App → DR Data Map (straight down) -->
+  <line x1="990" y1="412" x2="990" y2="458"
+        stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="960" cy="435" r="10" fill="#7c3aed"/>
+  <text x="960" y="439" text-anchor="middle"
+        font-size="10" font-weight="bold" fill="#fff">5</text>
+  <rect x="1000" y="427" width="108" height="16" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <text x="1054" y="439" text-anchor="middle"
+        font-size="10" fill="#64748b">SP-B · REST APIs</text>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- LEGEND                                          -->
+  <!-- ════════════════════════════════════════════════ -->
+  <rect x="40" y="700" width="1220" height="100" rx="10"
+        fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="60" y="722" font-size="12" font-weight="700" fill="#1e293b">Legend</text>
+
+  <rect x="130" y="712" width="16" height="14" rx="3"
+        fill="#dbeafe" stroke="#60a5fa" stroke-width="1"/>
+  <text x="152" y="724" font-size="10" fill="#64748b">Data Sources</text>
+
+  <rect x="250" y="712" width="16" height="14" rx="3"
+        fill="#f0fdfa" stroke="#14b8a6" stroke-width="1"/>
+  <text x="272" y="724" font-size="10" fill="#64748b">Connectors / Primary</text>
+
+  <rect x="395" y="712" width="16" height="14" rx="3"
+        fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+  <text x="417" y="724" font-size="10" fill="#64748b">Azure Functions</text>
+
+  <rect x="530" y="712" width="16" height="14" rx="3"
+        fill="#ede9fe" stroke="#a78bfa" stroke-width="1"/>
+  <text x="552" y="724" font-size="10" fill="#64748b">DR (Tenant B)</text>
+
+  <rect x="660" y="712" width="16" height="14" rx="3"
+        fill="#fff" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="682" y="724" font-size="10" fill="#64748b">Kafka-Replicated</text>
+
+  <rect x="800" y="712" width="16" height="14" rx="3"
+        fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="822" y="724" font-size="10" fill="#64748b">REST API-Replicated</text>
+
+  <text x="60" y="750" font-size="10" font-weight="600" fill="#475569">Flow:</text>
+  <text x="95" y="750" font-size="10" fill="#64748b">
+    1 Connectors scan data sources · 2 Scan results feed into Purview Primary ·
+    3 Purview emits ATLAS_ENTITIES Kafka events to Azure Functions</text>
+  <text x="95" y="766" font-size="10" fill="#64748b">
+    4 Azure Functions replicates to Primary via SP-A + REST APIs (Data Products, Governance Domains) ·
+    5 Azure Functions replicates to DR via SP-B + REST APIs</text>
+
+  <text x="60" y="786" font-size="10" fill="#64748b">
+    Custom App does not access data sources directly — it only receives Kafka events emitted by Purview</text>
+</svg>
