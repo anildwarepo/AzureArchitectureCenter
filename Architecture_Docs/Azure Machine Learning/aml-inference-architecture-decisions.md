@@ -283,40 +283,11 @@ Data Scientist → push → feature/* → GH Actions Build → push to ACR → d
 
 ### Training Data Flow (Dev Only)
 
-```
-[ EXTERNAL: Microsoft Fabric environment ]
-  OneLake (Lakehouse / Delta)
-        │  (referenced via OneLake shortcut)
-        ▼
-  AML Datastore → AML Dataset (versioned)
-        │
-        ▼
-  Fabric Pipeline ──── submit job (Managed Identity, REST) ────► AML Training Compute Cluster (3 GPU nodes)
-                                                                           │
-                                                                           ▼
-                                                          Trained Model → AML Model Registry (Dev)
-                                                                           │
-                                                                           ▼
-                                              Feature Store (Offline) · Pre-trained Models (Blob)
-```
+![Training Data Flow](../../Architecture_Diagrams/Azure%20Machine%20Learning/aml-training-data-flow.svg)
 
 ### Continuous Training Loop (Closed-Loop MLOps)
 
-```
- AML monitoring / drift signal  ─────────────────────►  Fabric Pipeline (trigger)
-        ▲                                                            │
-        │                                                            ▼
-        │                                              refresh OneLake feature tables
-        │                                                            │
-        │                                                            ▼
-        │                                              submit AML training job (new Dataset version)
-        │                                                            │
-        │                                                            ▼
-        │                                              register new model in AML Model Registry (Dev)
-        │                                                            │
-        │                                                            ▼
-        └───────── model performance feedback ───  CI/CD promotes Dev → Stage → Prod
-```
+![Continuous Training Loop](../../Architecture_Diagrams/Azure%20Machine%20Learning/aml-continuous-training-loop.svg)
 
 ### Model Promotion Flow
 

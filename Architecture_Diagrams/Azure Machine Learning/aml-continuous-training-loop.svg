@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <marker id="arr"     markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+    <marker id="arrPink" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" fill="#ec4899"/></marker>
+  </defs>
+
+  <rect width="1200" height="540" fill="#f8fafc"/>
+  <text x="600" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Continuous Training Loop · Closed-Loop MLOps</text>
+
+  <!-- AML Monitoring (left column) -->
+  <rect x="40" y="220" width="240" height="100" rx="10" fill="#fdf2f8" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="160" y="250" text-anchor="middle" font-size="14" font-weight="700" fill="#9d174d">📈 AML Monitoring</text>
+  <text x="160" y="272" text-anchor="middle" font-size="11" fill="#9d174d">drift / freshness signals</text>
+  <text x="160" y="290" text-anchor="middle" font-size="11" fill="#9d174d">model performance metrics</text>
+  <text x="160" y="308" text-anchor="middle" font-size="11" fill="#9d174d">+ telemetry from Prod</text>
+
+  <!-- Vertical chain (center) -->
+  <rect x="490" y="60" width="280" height="60" rx="10" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="630" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#5b21b6">🔄 Fabric Pipeline (trigger)</text>
+  <text x="630" y="103" text-anchor="middle" font-size="10" fill="#5b21b6">orchestrates retraining cycle</text>
+
+  <rect x="490" y="160" width="280" height="60" rx="10" fill="#fff" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="630" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#0369a1">refresh OneLake feature tables</text>
+  <text x="630" y="203" text-anchor="middle" font-size="10" fill="#0369a1">new training data version</text>
+
+  <rect x="490" y="260" width="280" height="60" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="630" y="284" text-anchor="middle" font-size="12" font-weight="700" fill="#0c4a6e">submit AML training job</text>
+  <text x="630" y="303" text-anchor="middle" font-size="10" fill="#0c4a6e">new Dataset version</text>
+
+  <rect x="490" y="360" width="280" height="60" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="630" y="384" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">register new model (Dev)</text>
+  <text x="630" y="403" text-anchor="middle" font-size="10" fill="#065f46">AML Model Registry</text>
+
+  <rect x="490" y="460" width="280" height="60" rx="10" fill="#fef2f2" stroke="#f87171" stroke-width="1.5"/>
+  <text x="630" y="484" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b">CI/CD promote</text>
+  <text x="630" y="503" text-anchor="middle" font-size="10" fill="#991b1b">Dev → Stage → Prod</text>
+
+  <!-- Production telemetry (right column) -->
+  <rect x="930" y="220" width="230" height="100" rx="10" fill="#fff" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="1045" y="250" text-anchor="middle" font-size="13" font-weight="700" fill="#9d174d">🔬 Production telemetry</text>
+  <text x="1045" y="272" text-anchor="middle" font-size="10" fill="#9d174d">live inference metrics</text>
+  <text x="1045" y="290" text-anchor="middle" font-size="10" fill="#9d174d">prediction quality + latency</text>
+  <text x="1045" y="308" text-anchor="middle" font-size="10" fill="#9d174d">data drift indicators</text>
+
+  <!-- ═══ ARROWS — orthogonal, no crossings ═══ -->
+
+  <!-- Vertical chain (center, top → bottom) -->
+  <line x1="630" y1="120" x2="630" y2="155" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="630" y1="220" x2="630" y2="255" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="630" y1="320" x2="630" y2="355" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="630" y1="420" x2="630" y2="455" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Drift signal: AML Monitoring → Fabric Pipeline trigger
+       Route: out top of monitoring, up to y=40, right to x=630, down into Pipeline -->
+  <polyline points="160,220 160,40 630,40 630,55" stroke="#ec4899" stroke-width="2" fill="none" marker-end="url(#arrPink)"/>
+  <rect x="240" y="22" width="120" height="20" rx="3" fill="#fff" stroke="#ec4899" stroke-width="0.7"/>
+  <text x="300" y="37" text-anchor="middle" font-size="11" fill="#9d174d" font-weight="700">drift signal</text>
+
+  <!-- CI/CD promote → Production telemetry
+       Route: out right of CI/CD, right to x=1045, up into telemetry box from below -->
+  <polyline points="772,490 1045,490 1045,325" stroke="#ec4899" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#arrPink)"/>
+  <rect x="800" y="468" width="200" height="20" rx="3" fill="#fff" stroke="#ec4899" stroke-width="0.7"/>
+  <text x="900" y="483" text-anchor="middle" font-size="11" fill="#9d174d" font-weight="700">deploy → live traffic</text>
+
+  <!-- Production telemetry → AML Monitoring (closing the loop)
+       Route AROUND the diagram: out top of telemetry, up to y=15, left across the very top
+       to x=15, down to y=270, right into monitoring. Stays in empty margin everywhere. -->
+  <polyline points="1045,220 1045,15 15,15 15,270 35,270" stroke="#ec4899" stroke-width="2" stroke-dasharray="5,3" fill="none" marker-end="url(#arrPink)"/>
+  <rect x="20" y="120" width="170" height="20" rx="3" fill="#fff" stroke="#ec4899" stroke-width="0.7"/>
+  <text x="105" y="135" text-anchor="middle" font-size="10" fill="#9d174d" font-weight="700">telemetry → drift detector</text>
+</svg>
